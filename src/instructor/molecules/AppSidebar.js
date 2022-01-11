@@ -8,10 +8,10 @@ const AppSidebar = () => {
       </div>
       <div className="sidebar-nav">
         <ul>
-          <li><a href="#">blogs</a></li>
-          <li><a href="#">videos</a></li>
-          <li><a href="#">students</a></li>
-          <li><a href="#">user</a></li>
+          <li> <a href="#">blogs</a> </li>
+          <li> <a href="#">videos</a> </li>
+          <li> <a href="#">students</a> </li>
+          <li> <a href="#">user</a> </li>
         </ul>
       </div>
       <div className="sidebar-toggler">

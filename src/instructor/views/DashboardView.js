@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppSidebar, AppFooter, AppHeader } from  './../molecules/index';
+import { AppSidebar, AppFooter, AppHeader, AppContent } from  './../molecules/index';
 
 export const DashboardView = () => {
   return (

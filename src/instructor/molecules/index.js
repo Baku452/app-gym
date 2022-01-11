@@ -7,5 +7,5 @@ export {
   AppFooter,
   AppHeader,
   AppSidebar,
-  AppContent,
-}
+  AppContent
+};

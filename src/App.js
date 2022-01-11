@@ -6,12 +6,12 @@ function App() {
   return (
     <div className="App">
       <Routes>
-         <Route path="/" element={<Home />}></Route>
--        <Route path="about" element={<About />}></Route>
+        <Route path="instructor" element={<DashboardView />}></Route>
       </Routes>
     </div>
   );
 }
-         // <Route path="instructor" element={<DashboardView />}></Route>
+// <Route path="/" element={<Home />}></Route>
+// <Route path="about" element={<About />}></Route>
 
 export default App;
