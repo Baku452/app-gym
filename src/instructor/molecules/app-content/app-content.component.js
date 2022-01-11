@@ -1,4 +1,5 @@
 import React from 'react';
+import  './app-content.styles.scss';
 
 const AppContent = () => {
   return (

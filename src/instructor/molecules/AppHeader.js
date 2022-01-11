@@ -1,15 +1,15 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 
 const AppHeader = () => {
   // const dispatch = useDispatch();
   // const sidebarShow = useSelector((state) => state.sidebarShow);
+  //onClick={ () => dispatch({ type: 'set', sidebarShow: !sidebarShow }) }
 
-  // onClikc={ () => dispatch({ type: 'set', sidebarShow: !sidebarShow }) }
   return (
     <header>
       <div className="container">
-        <div className="header-toggler">
+        <div className="header-toggler" >
           <img src="#" alt="icon hamburguer" />
         </div>
         <div className="header-brand">
