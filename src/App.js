@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { DashboardView } from './instructor/views/DashboardView';
+import { DashboardView } from './instructor/views/dashboard.component';
 
 function App() {
   return (
