@@ -5,7 +5,10 @@ const AppSidebar = () => {
   return (
     <div class="aside">
       <div class="aside__log">
-        <img src={ require('./../../../assets/icons/instructor/gym.ico') } alt="logo_gym" />
+        <img
+          src={require('./../../../../assets/icons/instructor/gym.ico')}
+          alt="logo_gym"
+        />
       </div>
       <div class="aside__content">
         <nav class="aside__content__menu">
