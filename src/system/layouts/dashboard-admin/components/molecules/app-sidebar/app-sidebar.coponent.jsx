@@ -6,7 +6,7 @@ const AppSidebar = () => {
     <div class="aside">
       <div class="aside__log">
         <img
-          src={require('./../../../../assets/icons/instructor/gym.ico')}
+          src={require('./../../../../../../assets/icons/instructor/gym.ico')}
           alt="logo_gym"
         />
       </div>

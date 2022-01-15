@@ -15,7 +15,8 @@ const AppHeader = () => {
           <div class="menu__icon">
             <img
               src={
-                require('./../../../../assets/icons/instructor/hamburguer.svg').default
+                require('./../../../../../../assets/icons/instructor/hamburguer.svg')
+                  .default
               }
               alt="icon search"
             />
@@ -25,7 +26,10 @@ const AppHeader = () => {
           <div class="search">
             <div class="search__icon">
               <img
-                src={require('./../../../../assets/icons/instructor/search.svg').default}
+                src={
+                  require('./../../../../../../assets/icons/instructor/search.svg')
+                    .default
+                }
                 alt="icon search"
               />
             </div>
@@ -39,7 +43,10 @@ const AppHeader = () => {
           <div class="user__icons">
             <div class="notify">
               <img
-                src={require('./../../../../assets/icons/instructor/notify.svg').default}
+                src={
+                  require('./../../../../../../assets/icons/instructor/notify.svg')
+                    .default
+                }
                 alt="icon notify"
               />
             </div>
@@ -47,7 +54,7 @@ const AppHeader = () => {
           <div class="user__profile">
             <div class="photo">
               <img
-                src={require('./../../../../assets/images/instructor/carla.jpg')}
+                src={require('./../../../../../../assets/images/instructor/carla.jpg')}
                 alt="profile photo"
               />
             </div>

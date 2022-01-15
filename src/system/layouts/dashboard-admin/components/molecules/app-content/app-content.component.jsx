@@ -10,12 +10,15 @@ const AppContent = () => {
           <div className="course">
             <div className="course__image">
               <img
-                src={require('./../../../../assets/images/instructor/course_1.jpg')}
+                src={require('./../../../../../../assets/images/instructor/course_1.jpg')}
                 alt="course gym"
               />
               <div className="course__image__play">
                 <img
-                  src={require('./../../../../assets/icons/instructor/play.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/play.svg')
+                      .default
+                  }
                   alt="course gym"
                 />
               </div>
@@ -28,27 +31,42 @@ const AppContent = () => {
               <span className="stars">
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
               </span>
@@ -57,12 +75,15 @@ const AppContent = () => {
           <div className="course">
             <div className="course__image">
               <img
-                src={require('./../../../../assets/images/instructor/course_2.jpg')}
+                src={require('./../../../../../../assets/images/instructor/course_2.jpg')}
                 alt="course gym"
               />
               <div className="course__image__play">
                 <img
-                  src={require('./../../../../assets/icons/instructor/play.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/play.svg')
+                      .default
+                  }
                   alt="course gym"
                 />
               </div>
@@ -75,27 +96,42 @@ const AppContent = () => {
               <span className="stars">
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
               </span>
@@ -104,12 +140,15 @@ const AppContent = () => {
           <div className="course">
             <div className="course__image">
               <img
-                src={require('./../../../../assets/images/instructor/course_3.jpg')}
+                src={require('./../../../../../../assets/images/instructor/course_3.jpg')}
                 alt="course gym"
               />
               <div className="course__image__play">
                 <img
-                  src={require('./../../../../assets/icons/instructor/play.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/play.svg')
+                      .default
+                  }
                   alt="course gym"
                 />
               </div>
@@ -122,27 +161,42 @@ const AppContent = () => {
               <span className="stars">
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
               </span>
@@ -151,12 +205,15 @@ const AppContent = () => {
           <div className="course">
             <div className="course__image">
               <img
-                src={require('./../../../../assets/images/instructor/course_4.jpg')}
+                src={require('./../../../../../../assets/images/instructor/course_4.jpg')}
                 alt="course gym"
               />
               <div className="course__image__play">
                 <img
-                  src={require('./../../../../assets/icons/instructor/play.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/play.svg')
+                      .default
+                  }
                   alt="course gym"
                 />
               </div>
@@ -169,27 +226,42 @@ const AppContent = () => {
               <span className="stars">
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
               </span>
@@ -198,12 +270,15 @@ const AppContent = () => {
           <div className="course">
             <div className="course__image">
               <img
-                src={require('./../../../../assets/images/instructor/course_5.jpg')}
+                src={require('./../../../../../../assets/images/instructor/course_5.jpg')}
                 alt="course gym"
               />
               <div className="course__image__play">
                 <img
-                  src={require('./../../../../assets/icons/instructor/play.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/play.svg')
+                      .default
+                  }
                   alt="course gym"
                 />
               </div>
@@ -216,27 +291,42 @@ const AppContent = () => {
               <span className="stars">
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
               </span>
@@ -245,12 +335,15 @@ const AppContent = () => {
           <div className="course">
             <div className="course__image">
               <img
-                src={require('./../../../../assets/images/instructor/course_6.jpg')}
+                src={require('./../../../../../../assets/images/instructor/course_6.jpg')}
                 alt="course gym"
               />
               <div className="course__image__play">
                 <img
-                  src={require('./../../../../assets/icons/instructor/play.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/play.svg')
+                      .default
+                  }
                   alt="course gym"
                 />
               </div>
@@ -263,27 +356,42 @@ const AppContent = () => {
               <span className="stars">
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
                 <img
                   className="star"
-                  src={require('./../../../../assets/icons/instructor/star.svg').default}
+                  src={
+                    require('./../../../../../../assets/icons/instructor/star.svg')
+                      .default
+                  }
                   alt=""
                 />
               </span>
@@ -304,35 +412,40 @@ const AppContent = () => {
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
@@ -342,7 +455,7 @@ const AppContent = () => {
             </div>
             <div className="blog__image">
               <img
-                src={require('./../../../../assets/images/instructor/blog1.jpg')}
+                src={require('./../../../../../../assets/images/instructor/blog1.jpg')}
                 alt=""
               />
             </div>
@@ -359,35 +472,40 @@ const AppContent = () => {
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
@@ -397,7 +515,7 @@ const AppContent = () => {
             </div>
             <div className="blog__image">
               <img
-                src={require('./../../../../assets/images/instructor/blog2.jpg')}
+                src={require('./../../../../../../assets/images/instructor/blog2.jpg')}
                 alt=""
               />
             </div>
@@ -414,35 +532,40 @@ const AppContent = () => {
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
@@ -452,7 +575,7 @@ const AppContent = () => {
             </div>
             <div className="blog__image">
               <img
-                src={require('./../../../../assets/images/instructor/blog3.jpg')}
+                src={require('./../../../../../../assets/images/instructor/blog3.jpg')}
                 alt=""
               />
             </div>
@@ -469,35 +592,40 @@ const AppContent = () => {
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
                   <img
                     className="star"
                     src={
-                      require('./../../../../assets/icons/instructor/star.svg').default
+                      require('./../../../../../../assets/icons/instructor/star.svg')
+                        .default
                     }
                     alt=""
                   />
@@ -507,7 +635,7 @@ const AppContent = () => {
             </div>
             <div className="blog__image">
               <img
-                src={require('./../../../../assets/images/instructor/blog4.jpg')}
+                src={require('./../../../../../../assets/images/instructor/blog4.jpg')}
                 alt=""
               />
             </div>
@@ -524,7 +652,7 @@ const AppContent = () => {
           <div className="profile">
             <div className="profile__photo">
               <img
-                src={require('./../../../../assets/images/instructor/carla.jpg')}
+                src={require('./../../../../../../assets/images/instructor/carla.jpg')}
                 alt="profile instructor"
               />
             </div>
@@ -581,7 +709,7 @@ const AppContent = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../../../assets/images/instructor/instructor1.jpg')}
+                  src={require('./../../../../../../assets/images/instructor/instructor1.jpg')}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -596,7 +724,7 @@ const AppContent = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../../../assets/images/instructor/instructor2.jpg')}
+                  src={require('./../../../../../../assets/images/instructor/instructor2.jpg')}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -611,7 +739,7 @@ const AppContent = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../../../assets/images/instructor/instructor3.jpg')}
+                  src={require('./../../../../../../assets/images/instructor/instructor3.jpg')}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -626,7 +754,7 @@ const AppContent = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../../../assets/images/instructor/instructor4.jpg')}
+                  src={require('./../../../../../../assets/images/instructor/instructor4.jpg')}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -641,7 +769,7 @@ const AppContent = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../../../assets/images/instructor/instructor5.jpg')}
+                  src={require('./../../../../../../assets/images/instructor/instructor5.jpg')}
                   alt=""
                 />
                 <div className="instructor__description">

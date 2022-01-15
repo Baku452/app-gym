@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import LayoutWeb from './web/layout/web-layout.component';
 import WebHome from './web/Home/web-home.page';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { DashboardView } from './instructor/components/views/dashboard.component';
+import { DashboardView } from './system/layouts/dashboard-admin/components/views/dashboard.component';
 
 function App() {
   return (
