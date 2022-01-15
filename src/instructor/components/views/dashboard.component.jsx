@@ -6,9 +6,9 @@ export const DashboardView = () => {
   return (
     <div className="dashboard">
       <AppSidebar />
-      <div className="wrapper d-flex flex-column min-vh-100 bg-light">
+      <div className="wrapper">
         <AppHeader />
-        <div className="body flex-grow-1 px-3">
+        <div className="body">
           <AppContent />
         </div>
       </div>

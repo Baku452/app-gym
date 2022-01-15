@@ -1,0 +1,49 @@
+.card {
+  overflow: hidden;
+  cursor: pointer;
+  .card__content {
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100&;
+    bottom: 0;
+    z-index: 10;
+    h3 {
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.384);
+    }
+  }
+  img {
+    transition: 0.1s ease-in-out;
+  }
+  &:hover img {
+    transform: scale(1.1);
+  }
+}
+
+.joinUs {
+  align-self: center;
+}
+
+.features__card {
+  max-width: 25%;
+  position: relative;
+  max-height: 300px;
+  overflow: hidden;
+  .features__card__content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: absolute;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.384);
+    transition: 0.3s ease;
+  }
+  img {
+    object-fit: cover;
+  }
+}
