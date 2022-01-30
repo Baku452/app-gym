@@ -1,0 +1,22 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%; // 1rem = 10
+}
+
+body {
+  font-size: 62.5%; // 1rem = 10
+  font-family: 'Varta', sans-serif;
+}
+
+// If you want to override variables do it here
+@import 'variables';
+
+@import 'layout';
+
+// If you want to add custom CSS you can put it here.
+@import 'custom';
+
+@import 'overwrite_bootstrap';

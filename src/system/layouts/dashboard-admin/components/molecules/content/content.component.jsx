@@ -1,7 +1,7 @@
 import React from 'react';
-import './app-content.styles.scss';
+import './content.styles.scss';
 
-const AppContent = () => {
+const Content = () => {
   return (
     <div className="principal">
       <div className="principal__body">
@@ -787,4 +787,4 @@ const AppContent = () => {
     </div>
   );
 };
-export default React.memo(AppContent);
+export default React.memo(Content);
