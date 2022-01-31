@@ -2,30 +2,7 @@ import LayoutWeb from '../layout/web-layout.component';
 import styles from './web-home.module.scss';
 import WebBanner from '../components/molecules/web-banner/web-banner.component';
 import { Container, Col, Row } from 'react-bootstrap';
-
-const training = [
-  {
-    id: 1,
-    title: 'Aerobic',
-    img: 'img/trainings/ourTrainings.jpg',
-  },
-  {
-    id: 2,
-    title: 'Aerobic',
-    img: 'img/trainings/ourTrainings_2.jpg',
-  },
-  {
-    id: 3,
-    title: 'Aerobic',
-    img: 'img/trainings/ourTrainings_3.jpg',
-  },
-  {
-    id: 4,
-    title: 'Aerobic',
-    img: 'img/trainings/ourTrainings_4.jpg',
-  },
-];
-
+import { services } from '../../data/home/services';
 const features = [
   {
     id: 1,
@@ -79,22 +56,25 @@ const WebHome = () => {
   return (
     <>
       <LayoutWeb>
-        <WebBanner image={'img/banner.jpg'} />
-        <Container>
-          <Row className="p-5">
-            <h2 className="text-center">Our Trainings</h2>
-          </Row>
-          <Row>
-            {training.map(item => (
-              <Col md lg={3} className={`position-relative ${styles.card}`}>
-                <div className={styles.card__content}>
-                  <h3>{item.title}</h3>
-                </div>
-                <img src={item.img} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
+        <WebBanner image={'img/HomeBanner.jpg'} />
+        <div className={styles.containerHome}>
+          <Container>
+            <Row className="p-5">
+              <h2 className="text-center">Our Trainings</h2>
+            </Row>
+            <Row>
+              {services.map(item => (
+                <Col md lg={4} className={`position-relative ${styles.card}`}>
+                  <div className={styles.card__content}>
+                    <h3>{item.title}</h3>
+                  </div>
+                  <img alt={item.title} src={item.img} />
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </div>
+
         <Container>
           <Row className="py-5">
             <Col lg={4}>

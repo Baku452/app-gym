@@ -1,10 +1,9 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import LayoutWeb from './web/layout/web-layout.component';
+import { Routes, Route } from 'react-router-dom';
 import WebHome from './web/Home/web-home.page';
 import { DashboardAdmin } from './system/layouts/dashboard-admin/components/organisms/dashboard-admin.component';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './scss/style.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './scss/style.scss';
 
 function App() {
   return (

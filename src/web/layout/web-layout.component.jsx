@@ -1,5 +1,5 @@
-import WebHeader from '../components/molecules/web-header/web-header.component';
-import WebFooter from '../components/molecules/web-footer/web-footer.component';
+import WebHeader from '../components/organism/web-header/web-header.component';
+import WebFooter from '../components/organism/web-footer/web-footer.component';
 
 const LayoutWeb = props => {
   return (
