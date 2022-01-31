@@ -4,6 +4,7 @@
   background-color: $menu;
   width: 236px;
   color: $white;
+  height: 100vh;
 
   &_logo {
     background-color: $menu-logo;
@@ -18,3 +19,10 @@
 
 }
 
+.nav {
+  &__item {
+    display: flex;
+    height: 50px;
+    align-items: center;
+  }
+}
