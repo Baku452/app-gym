@@ -1,15 +1,16 @@
 import * as React from 'react';
+import { Outlet } from 'react-router';
 import { Sidebar, Header, Content } from './../molecules/index';
-import './dashboard-admin.styles.scss';
+import styles from './dashboard-admin.module.scss';
 
 export const DashboardAdmin = () => {
   return (
-    <div className="dashboard">
+    <div className="d-flex">
       <Sidebar />
-      <div className="wrapper">
+      <div className="w-100">
         <Header />
         <div className="body">
-          <Content />
+          <Outlet />
         </div>
       </div>
     </div>
