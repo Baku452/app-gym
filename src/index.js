@@ -4,8 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { DashboardAdmin } from './system/layouts/dashboard-admin/components/organisms/dashboard-admin.component';
-import WebHome from './web/Home/web-home.page';
+import { DashboardAdmin } from './system/dashboard-admin/components/organisms/dashboard-admin.component';
 
 ReactDOM.render(
   <React.StrictMode>

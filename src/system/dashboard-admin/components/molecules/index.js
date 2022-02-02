@@ -7,5 +7,6 @@ import Class from './class/class.component';
 import Students from './students/students.component';
 import Blogs from './blogs/blogs.component';
 import Configs from './configs/configs.component';
+import Courses from './courses/courses.component';
 
-export { Footer, Header, Sidebar, Content, Resume, Class, Students, Blogs, Configs };
+export { Footer, Header, Sidebar, Content, Resume, Class, Students, Blogs, Configs, Courses };
