@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <Navbar className={styles.navbar}>
-      <Container>
+      <Container fluid>
         <div className="d-flex">
           <Navbar.Toggle className={styles.navbar__logo} aria-controls="offcanvasNavbar">
             <Image src={hamburguer} alt="Logo Gym" roundedCircle={true} />

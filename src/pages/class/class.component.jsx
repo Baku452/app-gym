@@ -1,5 +1,5 @@
 import React from 'react';
-import { Courses  } from './../index';
+import { Courses  } from './../../components/molecules';
 import './class.module.scss';
 
 const Class = () => {

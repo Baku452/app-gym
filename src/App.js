@@ -1,14 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import WebHome from './web/Home/web-home.page';
-import { DashboardAdmin } from './system/dashboard-admin/components/organisms/dashboard-admin.component';
+import { DashboardAdmin } from './layout/dashboard-admin.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.scss';
-import { Resume } from './system/dashboard-admin/components/molecules';
-import { Class } from './system/dashboard-admin/components/molecules';
-import { Blogs } from './system/dashboard-admin/components/molecules';
-import { Students } from './system/dashboard-admin/components/molecules';
-import { Configs } from './system/dashboard-admin/components/molecules';
+import { Resume, Class, Students, Blogs, Configs } from './pages';
 
 function App() {
   return (

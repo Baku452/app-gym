@@ -1,17 +1,38 @@
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-) !default;
+@import 'src/scss/variables.scss';
+
+// $theme-colors: (
+//   "primary":    $primary,
+//   "secondary":  $secondary,
+//   "success":    $success,
+//   "info":       $info,
+//   "warning":    $warning,
+//   "danger":     $danger,
+//   "light":      $light,
+//   "dark":       $dark
+// ) !default;
 
 .nav-link {
   color: $white;
   font-size: 16px;
   font-weight: bold;
+
+  &:hover {
+    color: $white;
+  }
+
+}
+
+.nav-item {
+  &:hover {
+    background-color: #505d74;
+  }
+
+  &:focus,
+  &:link,
+  &:checked,
+  &:visited {
+    background-color: #505d74;
+    color: $white;
+  }
 }
 
