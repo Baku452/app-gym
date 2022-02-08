@@ -3,17 +3,17 @@ import './courses.module.scss';
 import styles from './courses.module.scss';
 
 //images
-import playIcon from 'src/assets/icons/instructor/play.svg';
-import starIcon from 'src/assets/icons/instructor/star.svg';
+import playIcon from 'assets/icons/instructor/play.svg';
+import starIcon from 'assets/icons/instructor/star.svg';
 
 // https://picsum.photos/278/156
 const Courses = () => {
   return (
     <div className="courses container mt-3">
-      <div className={ styles.courses__title }>
+      <div className={styles.courses__title}>
         <span>Cursos Publicados</span>
       </div>
-      <div className={ styles.courses__content }>
+      <div className={styles.courses__content}>
         <div className={styles.course}>
           <div className={styles.course__preview}>
             <img

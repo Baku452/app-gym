@@ -1,6 +1,6 @@
-import LayoutWeb from '../layout/web-layout.component';
+import { LayoutWeb } from 'layout/index.js';
 import styles from './web-home.module.scss';
-import WebBanner from '../components/molecules/web-banner/web-banner.component';
+import { WebBanner } from 'components/index';
 import { Container, Col, Row } from 'react-bootstrap';
 import { services } from '../../data/home/services';
 const features = [
@@ -78,7 +78,7 @@ const WebHome = () => {
         <Container>
           <Row className="py-5">
             <Col lg={4}>
-              <img src="img/trainings/ourTrainings_4.jpg"></img>
+              <img alt="training" src="img/trainings/ourTrainings_4.jpg"></img>
             </Col>
             <Col lg={8} className={`text-center ${styles.joinUs}`}>
               <h2>¿Why Join Us?</h2>

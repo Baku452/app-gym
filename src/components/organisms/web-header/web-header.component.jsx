@@ -30,4 +30,4 @@ const WebHeader = () => {
   );
 };
 
-export default WebHeader;
+export { WebHeader };

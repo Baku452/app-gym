@@ -3,12 +3,12 @@ import { Image, Nav } from 'react-bootstrap';
 import styles from './sidebar.module.scss';
 
 // Images
-import avatar1 from 'src/assets/icons/instructor/gym.ico';
-import navHome from 'src/assets/icons/instructor/nav-home.svg';
-import navClass from 'src/assets/icons/instructor/nav-class.svg';
-import navStudents from 'src/assets/icons/instructor/nav-students.svg';
-import navBlogs from 'src/assets/icons/instructor/nav-blog.svg';
-import navConfig from 'src/assets/icons/instructor/nav-config.svg';
+import avatar1 from 'assets/icons/instructor/gym.ico';
+import navHome from 'assets/icons/instructor/nav-home.svg';
+import navClass from 'assets/icons/instructor/nav-class.svg';
+import navStudents from 'assets/icons/instructor/nav-students.svg';
+import navBlogs from 'assets/icons/instructor/nav-blog.svg';
+import navConfig from 'assets/icons/instructor/nav-config.svg';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {

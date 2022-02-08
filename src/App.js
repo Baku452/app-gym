@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import WebHome from './web/Home/web-home.page';
+import WebHome from './pages/Home/web-home.page';
 import { DashboardAdmin } from './layout/dashboard-admin.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.scss';

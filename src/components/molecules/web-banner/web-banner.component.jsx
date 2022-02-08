@@ -4,10 +4,9 @@ const WebBanner = ({ image }) => {
   return (
     <section className={styles.banner}>
       <div className={styles.banner__overlay} />
-      <img src={image} className={styles.banner__imagen} />
-      <h1>HOLA</h1>
+      <img alt="Imagen" src={image} className={styles.banner__imagen} />
     </section>
   );
 };
 
-export default WebBanner;
+export { WebBanner };

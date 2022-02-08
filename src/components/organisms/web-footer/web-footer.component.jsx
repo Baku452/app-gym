@@ -40,4 +40,4 @@ const WebFooter = () => {
   );
 };
 
-export default WebFooter;
+export { WebFooter };
