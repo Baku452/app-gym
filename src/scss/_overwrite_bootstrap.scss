@@ -1,15 +1,8 @@
 @import 'src/scss/variables.scss';
 
-// $theme-colors: (
-//   "primary":    $primary,
-//   "secondary":  $secondary,
-//   "success":    $success,
-//   "info":       $info,
-//   "warning":    $warning,
-//   "danger":     $danger,
-//   "light":      $light,
-//   "dark":       $dark
-// ) !default;
+$theme-colors: (
+  'primary': #9656a1,
+);
 
 .nav-link {
   color: $white;
@@ -19,7 +12,6 @@
   &:hover {
     color: $white;
   }
-
 }
 
 .nav-item {
@@ -35,4 +27,4 @@
     color: $white;
   }
 }
-
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
