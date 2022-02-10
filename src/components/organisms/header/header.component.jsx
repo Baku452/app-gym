@@ -3,10 +3,10 @@ import { Container, Image, Navbar } from 'react-bootstrap';
 import styles from './header.module.scss';
 // import { useSelector, useDispatch } from 'react-redux';
 // Images
-import hamburguer from 'assets/icons/instructor/hamburguer.svg';
-import search from 'assets/icons/instructor/search.svg';
-import bell from 'assets/icons/instructor/bell.svg';
-import instructor1 from 'assets/images/instructor/carla.jpg';
+const hamburguer = 'assets/icons/instructor/hamburguer.svg';
+const search = 'assets/icons/instructor/search.svg';
+const bell = 'assets/icons/instructor/bell.svg';
+const instructor1 = 'assets/images/instructor/carla.jpg';
 
 const Header = () => {
   // const dispatch = useDispatch();

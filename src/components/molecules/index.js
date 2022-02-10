@@ -1,4 +1,5 @@
 import Content from './content/content.component';
-import Courses from './courses/courses.component';
+import Course from './course/course.component';
+import Blog from './blog/blog.component';
 
-export { Content, Courses };
+export { Content, Course, Blog };

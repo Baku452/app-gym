@@ -1,11 +1,10 @@
 import React from 'react';
-import { Courses  } from './../../components/molecules';
-import './class.module.scss';
+import { Blog, Course } from 'src/components/molecules';
 
 const Class = () => {
   return (
     <>
-      <Courses />
+      <Course />
     </>
   )
 };

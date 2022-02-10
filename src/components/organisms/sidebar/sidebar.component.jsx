@@ -1,15 +1,15 @@
 import React from 'react';
 import { Image, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import styles from './sidebar.module.scss';
 
 // Images
-import avatar1 from 'assets/icons/instructor/gym.ico';
-import navHome from 'assets/icons/instructor/nav-home.svg';
-import navClass from 'assets/icons/instructor/nav-class.svg';
-import navStudents from 'assets/icons/instructor/nav-students.svg';
-import navBlogs from 'assets/icons/instructor/nav-blog.svg';
-import navConfig from 'assets/icons/instructor/nav-config.svg';
-import { Link } from 'react-router-dom';
+const avatar1 = 'assets/icons/instructor/gym.ico';
+const navHome = 'assets/icons/instructor/nav-home.svg';
+const navClass = 'assets/icons/instructor/nav-class.svg';
+const navStudents = 'assets/icons/instructor/nav-students.svg';
+const navBlogs = 'assets/icons/instructor/nav-blog.svg';
+const navConfig = 'assets/icons/instructor/nav-config.svg';
 
 const Sidebar = () => {
   return (
