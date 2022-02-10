@@ -1,5 +1,5 @@
 import React from 'react';
-import { Blog, Course } from 'src/components/molecules';
+import { Blog, Course } from 'components/molecules';
 
 const Class = () => {
   return (

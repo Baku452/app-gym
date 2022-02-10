@@ -1,5 +1,5 @@
 import React from 'react';
-import { Course } from 'src/components/molecules';
+import { Course } from 'components/molecules';
 import './resume.module.scss';
 
 const Resume = () => {
@@ -25,42 +25,27 @@ const Resume = () => {
                 <span className="stars">
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                 </span>
@@ -68,10 +53,7 @@ const Resume = () => {
               </div>
             </div>
             <div className="blog__image">
-              <img
-                src={require('./../../assets/images/instructor/blog1.jpg')}
-                alt=""
-              />
+              <img src={'./../../../public/assets/images/instructor/blog1.jpg'} alt="" />
             </div>
           </div>
           <div className="blog">
@@ -85,42 +67,27 @@ const Resume = () => {
                 <span className="stars">
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                 </span>
@@ -128,10 +95,7 @@ const Resume = () => {
               </div>
             </div>
             <div className="blog__image">
-              <img
-                src={require('./../../assets/images/instructor/blog2.jpg')}
-                alt=""
-              />
+              <img src={'./../../../public/assets/images/instructor/blog2.jpg'} alt="" />
             </div>
           </div>
           <div className="blog">
@@ -145,42 +109,27 @@ const Resume = () => {
                 <span className="stars">
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                 </span>
@@ -188,10 +137,7 @@ const Resume = () => {
               </div>
             </div>
             <div className="blog__image">
-              <img
-                src={require('./../../assets/images/instructor/blog3.jpg')}
-                alt=""
-              />
+              <img src={'./../../../public/assets/images/instructor/blog3.jpg'} alt="" />
             </div>
           </div>
           <div className="blog">
@@ -205,42 +151,27 @@ const Resume = () => {
                 <span className="stars">
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                   <img
                     className="star"
-                    src={
-                      require('./../../assets/icons/instructor/star.svg')
-                        .default
-                    }
+                    src={'./../../../public/assets/icons/instructor/star.svg'}
                     alt=""
                   />
                 </span>
@@ -248,10 +179,7 @@ const Resume = () => {
               </div>
             </div>
             <div className="blog__image">
-              <img
-                src={require('./../../assets/images/instructor/blog4.jpg')}
-                alt=""
-              />
+              <img src={'./../../../public/assets/images/instructor/blog4.jpg'} alt="" />
             </div>
           </div>
         </div>
@@ -266,7 +194,7 @@ const Resume = () => {
           <div className="profile">
             <div className="profile__photo">
               <img
-                src={require('./../../assets/images/instructor/carla.jpg')}
+                src={'./../../../public/assets/images/instructor/carla.jpg'}
                 alt="profile instructor"
               />
             </div>
@@ -323,7 +251,7 @@ const Resume = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../assets/images/instructor/instructor1.jpg')}
+                  src={'./../../../public/assets/images/instructor/instructor1.jpg'}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -338,7 +266,7 @@ const Resume = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../assets/images/instructor/instructor2.jpg')}
+                  src={'./../../../public/assets/images/instructor/instructor2.jpg'}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -353,7 +281,7 @@ const Resume = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../assets/images/instructor/instructor3.jpg')}
+                  src={'./../../../public/assets/images/instructor/instructor3.jpg'}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -368,7 +296,7 @@ const Resume = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../assets/images/instructor/instructor4.jpg')}
+                  src={'./../../../public/assets/images/instructor/instructor4.jpg'}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -383,7 +311,7 @@ const Resume = () => {
             <div className="instructor">
               <div className="instructor__profile">
                 <img
-                  src={require('./../../assets/images/instructor/instructor5.jpg')}
+                  src={'./../../../public/assets/images/instructor/instructor5.jpg'}
                   alt=""
                 />
                 <div className="instructor__description">
@@ -399,7 +327,6 @@ const Resume = () => {
         </div>
       </div>
     </div>
-
-  )
+  );
 };
 export default React.memo(Resume);
