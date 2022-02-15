@@ -1,16 +1,16 @@
 @import 'src/scss/style.scss';
 
-.course__title {
+.blog__title {
   font-size: 18px;
   color: $black;
   font-weight: bold;
 }
 
-.course__content {
+.blog__content {
   width:100%;
 }
 
-.course {
+.blog {
   display: flex;
   background-color: $white;
   border-radius: 10px;
