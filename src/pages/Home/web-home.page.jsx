@@ -1,9 +1,9 @@
 import { LayoutWeb } from 'layout/index.js';
 import styles from './web-home.module.scss';
 import { WebBanner } from 'components/index';
-import { CardHome } from 'components/molecules/index';
+import { CardHome, MembershipCard } from 'components/molecules/index';
 import { Container, Col, Row } from 'react-bootstrap';
-import { services } from '../../data/home/services';
+import { services, membership } from 'data/home/index.js';
 
 const WebHome = () => {
   return (
@@ -22,40 +22,48 @@ const WebHome = () => {
             </Row>
           </Container>
         </div>
-
-        {/* <Container>
-          <Row className="py-5">
-            <Col lg={4}>
-              <img alt="training" src="img/trainings/ourTrainings_4.jpg"></img>
-            </Col>
-            <Col lg={8} className={`text-center ${styles.joinUs}`}>
-              <h2>¿Why Join Us?</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis,
-                nisi totam minus cupiditate modi maiores esse aliquam? A distinctio
-                obcaecati, placeat perferendis inventore consequatur neque pariatur!
-                Reiciendis, placeat consequuntur.
-              </p>
-            </Col>
-          </Row>
-        </Container>
-        <Container>
-          <Row className="p-5">
-            <h2 className="text-center">Our Features</h2>
-          </Row>
-          <Row className="justify-content-around">
-            {features.map(item => (
-              <Col className={styles.features__card}>
-                <div className={styles.features__card__content}>
-                  <h3>{item.title}</h3>
-                </div>
-                <img src={item.img}></img>
+        <div className={styles.containerHome}>
+          <Container>
+            <Row className="py-5">
+              <Col lg={8} className={`${styles.joinUs} p-5`}>
+                <h2 className="pb-5">Our Service</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                  officiis, nisi totam minus cupiditate modi maiores esse aliquam? A
+                  distinctio obcaecati, placeat perferendis inventore consequatur neque
+                  pariatur! Reiciendis, placeat consequuntur.
+                </p>
               </Col>
-            ))}
-          </Row>
-        </Container>
+              <Col lg={4}>
+                <img alt="training" src="img/trainings/ourTrainings_4.jpg"></img>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <div className={'position-relative py-5'}>
+          <Container>
+            <div className={styles.divider}>
+              <svg
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                  d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+                  className={styles.divider__shapeFill}></path>
+              </svg>
+            </div>
+            <Row className="p-5">
+              <h2 className="pb-5">Membership</h2>
+              {membership.map(item => (
+                <MembershipCard item={item} />
+              ))}
+            </Row>
+          </Container>
+        </div>
+        {/*
         <Container>
-          <Row className="p-5">
+        <Row className="p-5">
             <h2 className="text-center">Our Pricings</h2>
           </Row>
           <Row className="justify-content-center">

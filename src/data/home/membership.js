@@ -1,23 +1,26 @@
-export const services = [
+export const membership = [
   {
     id: 1,
-    title: 'Trainers',
-    img: 'img/trainings/ourTrainings.jpg',
+    title: 'Free Plan',
     content:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+    price: 0,
+    active: false,
   },
   {
     id: 2,
-    title: 'Classes',
-    img: 'img/trainings/ourTrainings_2.jpg',
+    title: 'Monthly',
     content:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+    price: 19.99,
+    active: true,
   },
   {
     id: 3,
-    title: 'Join Us',
-    img: 'img/trainings/ourTrainings_3.jpg',
+    title: 'Yearly',
     content:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+    price: 9.99,
+    active: false,
   },
 ];

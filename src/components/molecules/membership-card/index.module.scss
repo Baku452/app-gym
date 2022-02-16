@@ -1,0 +1,46 @@
+@import '~scss/variables.scss';
+.card {
+  .card__content {
+    transition: 0.3s;
+    border-radius: 10px;
+    padding: 1rem;
+    border: 2px solid $primary;
+    width: 100%;
+    cursor: pointer;
+  }
+  .card__title {
+    color: $primary;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  .card__price {
+    font-weight: bold;
+    color: $primary;
+  }
+  &:hover {
+    color: #fff !important;
+    .card__title,
+    .card__price {
+      color: #fff !important;
+    }
+    .card__content {
+      background: $primary;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.active {
+  transform: scale(1.05);
+
+  .card__content {
+    color: #fff !important;
+
+    .card__title,
+    .card__price {
+      color: #fff !important;
+    }
+    background: $primary;
+    box-shadow: 0px 0px 11px 3px #d3d3d3;
+  }
+}
