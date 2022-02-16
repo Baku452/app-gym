@@ -9,18 +9,30 @@ const WebHeader = () => {
     <Navbar sticky="top" bg="dark" expand="lg" className={styles.header}>
       <Container className="justify-content-between">
         <div>
-          <Navbar.Brand href="#home">GYM-APP</Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <img alt="logo" src="icons/LogoTrackG.png"></img>
+          </Navbar.Brand>
         </div>
         <div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto ">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">About Us</Nav.Link>
-              <Nav.Link href="#link">Classes</Nav.Link>
-              <Nav.Link href="#link">Blog</Nav.Link>
-              <Nav.Link href="#link">Shop</Nav.Link>
-              <Button className="me-4">Login</Button>
+              <Nav.Link className={styles.header__link} href="#home">
+                Home
+              </Nav.Link>
+              <Nav.Link className={styles.header__link} href="#link">
+                About Us
+              </Nav.Link>
+              <Nav.Link className={styles.header__link} href="#link">
+                Classes
+              </Nav.Link>
+              <Nav.Link className={styles.header__link} href="#link">
+                Blog
+              </Nav.Link>
+              <Nav.Link className={styles.header__link} href="#link">
+                Shop
+              </Nav.Link>
+              <Button className="me-4">Enter to gym</Button>
               <Button variant="secondary">Sign-Up</Button>
             </Nav>
           </Navbar.Collapse>
