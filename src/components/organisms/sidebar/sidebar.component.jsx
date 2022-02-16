@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import styles from './sidebar.module.scss';
 
 // Images
-const avatar1 = 'assets/icons/instructor/gym.ico';
-const navHome = 'assets/icons/instructor/nav-home.svg';
-const navClass = 'assets/icons/instructor/nav-class.svg';
-const navStudents = 'assets/icons/instructor/nav-students.svg';
-const navBlogs = 'assets/icons/instructor/nav-blog.svg';
-const navConfig = 'assets/icons/instructor/nav-config.svg';
+const avatar1 = '../assets/icons/instructor/gym.ico';
+const navHome = '../assets/icons/instructor/nav-home.svg';
+const navClass = '../assets/icons/instructor/nav-class.svg';
+const navStudents = '../assets/icons/instructor/nav-students.svg';
+const navBlogs = '../assets/icons/instructor/nav-blog.svg';
+const navConfig = '../assets/icons/instructor/nav-config.svg';
 
 const Sidebar = () => {
   return (

@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './course.module.scss';
 
 //images
-const playIcon = 'src/assets/icons/instructor/play.svg';
-const starIcon = 'src/assets/icons/instructor/star.svg';
+const playIcon = '../assets/icons/instructor/play.svg';
+const starIcon = '../assets/icons/instructor/star.svg';
 
 // https://picsum.photos/278/156
 const Course = () => {

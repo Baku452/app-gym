@@ -7,8 +7,8 @@ const starIcon = 'src/assets/icons/instructor/star.svg';
 
 const Blog = () => {
   return (
-    <div className={styles.course}>
-      <div className={styles.course__description}>
+    <div className={styles.blog}>
+      <div className={styles.blog__description}>
         <span className={styles.title}>Uso de Barra Superior</span>
         <span className={styles.comments}>
           Tips y técnicas adecuadas para el entrenamiento con barra superior.
@@ -21,18 +21,18 @@ const Blog = () => {
             <img className={styles.start} src={starIcon} alt="" />
             <img className={styles.start} src={starIcon} alt="" />
           </span>
-          <button className={ styles.bottom }>leer mas</button>
+          <button className={styles.bottom}>leer mas</button>
         </div>
       </div>
-      <div className={styles.course__preview}>
+      <div className={styles.blog__preview}>
         <img
-          className={styles.course__image}
+          className={styles.blog__image}
           src="https://picsum.photos/278/156"
           alt="course gym"
         />
       </div>
     </div>
   );
-}
+};
 
-export default Blog
+export default Blog;

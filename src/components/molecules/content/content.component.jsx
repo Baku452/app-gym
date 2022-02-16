@@ -9,9 +9,9 @@ const Content = () => {
         <div className="principal__body__courses">
           <div className="course">
             <div className="course__image">
-              <img src={'assets/images/instructor/course_1.jpg'} alt="course gym" />
+              <img src={'../assets/images/instructor/course_1.jpg'} alt="course gym" />
               <div className="course__image__play">
-                <img src={'assets/icons/instructor/play.svg'} alt="course gym" />
+                <img src={'../assets/icons/instructor/play.svg'} alt="course gym" />
               </div>
             </div>
             <div className="course__description">
@@ -20,19 +20,39 @@ const Content = () => {
                 Tips y técnicas adecuadas para el entrenamiento con barra superior.
               </span>
               <span className="stars">
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
               </span>
             </div>
           </div>
           <div className="course">
             <div className="course__image">
-              <img src={'assets/images/instructor/course_2.jpg'} alt="course gym" />
+              <img src={'../assets/images/instructor/course_2.jpg'} alt="course gym" />
               <div className="course__image__play">
-                <img src={'assets/icons/instructor/play.svg'} alt="course gym" />
+                <img src={'../assets/icons/instructor/play.svg'} alt="course gym" />
               </div>
             </div>
             <div className="course__description">
@@ -41,19 +61,39 @@ const Content = () => {
                 Tips y técnicas adecuadas para el entrenamiento con barra superior.
               </span>
               <span className="stars">
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
               </span>
             </div>
           </div>
           <div className="course">
             <div className="course__image">
-              <img src={'assets/images/instructor/course_3.jpg'} alt="course gym" />
+              <img src={'../assets/images/instructor/course_3.jpg'} alt="course gym" />
               <div className="course__image__play">
-                <img src={'assets/icons/instructor/play.svg'} alt="course gym" />
+                <img src={'../assets/icons/instructor/play.svg'} alt="course gym" />
               </div>
             </div>
             <div className="course__description">
@@ -62,19 +102,39 @@ const Content = () => {
                 Tips y técnicas adecuadas para el entrenamiento con barra superior.
               </span>
               <span className="stars">
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
               </span>
             </div>
           </div>
           <div className="course">
             <div className="course__image">
-              <img src={'assets/images/instructor/course_4.jpg'} alt="course gym" />
+              <img src={'../assets/images/instructor/course_4.jpg'} alt="course gym" />
               <div className="course__image__play">
-                <img src={'assets/icons/instructor/play.svg'} alt="course gym" />
+                <img src={'../assets/icons/instructor/play.svg'} alt="course gym" />
               </div>
             </div>
             <div className="course__description">
@@ -83,19 +143,39 @@ const Content = () => {
                 Tips y técnicas adecuadas para el entrenamiento con barra superior.
               </span>
               <span className="stars">
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
               </span>
             </div>
           </div>
           <div className="course">
             <div className="course__image">
-              <img src={'assets/images/instructor/course_5.jpg'} alt="course gym" />
+              <img src={'../assets/images/instructor/course_5.jpg'} alt="course gym" />
               <div className="course__image__play">
-                <img src={'assets/icons/instructor/play.svg'} alt="course gym" />
+                <img src={'../assets/icons/instructor/play.svg'} alt="course gym" />
               </div>
             </div>
             <div className="course__description">
@@ -104,19 +184,39 @@ const Content = () => {
                 Tips y técnicas adecuadas para el entrenamiento con barra superior.
               </span>
               <span className="stars">
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
               </span>
             </div>
           </div>
           <div className="course">
             <div className="course__image">
-              <img src={'assets/images/instructor/course_6.jpg'} alt="course gym" />
+              <img src={'../assets/images/instructor/course_6.jpg'} alt="course gym" />
               <div className="course__image__play">
-                <img src={'assets/icons/instructor/play.svg'} alt="course gym" />
+                <img src={'../assets/icons/instructor/play.svg'} alt="course gym" />
               </div>
             </div>
             <div className="course__description">
@@ -125,11 +225,31 @@ const Content = () => {
                 Tips y técnicas adecuadas para el entrenamiento con barra superior.
               </span>
               <span className="stars">
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
+                <img
+                  className="star"
+                  src={'../assets/icons/instructor/star.svg'}
+                  alt=""
+                />
               </span>
             </div>
           </div>
@@ -147,19 +267,35 @@ const Content = () => {
                 <span className="stars">
                   <img
                     className="star"
-                    src={'assets/icons/instructor/star.svg'.default}
+                    src={'../assets/icons/instructor/star.svg'.default}
                     alt=""
                   />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
                 </span>
                 <a href="#">Ver mas</a>
               </div>
             </div>
             <div className="blog__image">
-              <img src={'assets/images/instructor/blog1.jpg'} alt="" />
+              <img src={'../assets/images/instructor/blog1.jpg'} alt="" />
             </div>
           </div>
           <div className="blog">
@@ -171,17 +307,37 @@ const Content = () => {
               </span>
               <div className="details">
                 <span className="stars">
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
                 </span>
                 <a href="#">Ver mas</a>
               </div>
             </div>
             <div className="blog__image">
-              <img src={'assets/images/instructor/blog2.jpg'} alt="" />
+              <img src={'../assets/images/instructor/blog2.jpg'} alt="" />
             </div>
           </div>
           <div className="blog">
@@ -193,17 +349,37 @@ const Content = () => {
               </span>
               <div className="details">
                 <span className="stars">
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
                 </span>
                 <a href="#">Ver mas</a>
               </div>
             </div>
             <div className="blog__image">
-              <img src={'assets/images/instructor/blog3.jpg'} alt="" />
+              <img src={'../assets/images/instructor/blog3.jpg'} alt="" />
             </div>
           </div>
           <div className="blog">
@@ -215,17 +391,37 @@ const Content = () => {
               </span>
               <div className="details">
                 <span className="stars">
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
-                  <img className="star" src={'assets/icons/instructor/star.svg'} alt="" />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
+                  <img
+                    className="star"
+                    src={'../assets/icons/instructor/star.svg'}
+                    alt=""
+                  />
                 </span>
                 <a href="#">Ver mas</a>
               </div>
             </div>
             <div className="blog__image">
-              <img src={'assets/images/instructor/blog4.jpg'} alt="" />
+              <img src={'../assets/images/instructor/blog4.jpg'} alt="" />
             </div>
           </div>
         </div>
@@ -239,7 +435,10 @@ const Content = () => {
         <div className="principal__instructor">
           <div className="profile">
             <div className="profile__photo">
-              <img src={'assets/images/instructor/carla.jpg'} alt="profile instructor" />
+              <img
+                src={'../assets/images/instructor/carla.jpg'}
+                alt="profile instructor"
+              />
             </div>
             <div className="profile__name">
               <span>Carla Atena</span>
@@ -293,7 +492,7 @@ const Content = () => {
           <div className="instructors">
             <div className="instructor">
               <div className="instructor__profile">
-                <img src={'assets/images/instructor/instructor1.jpg'} alt="" />
+                <img src={'../assets/images/instructor/instructor1.jpg'} alt="" />
                 <div className="instructor__description">
                   <span>Pedro Gonzales</span>
                   <span>Nutricionista</span>
@@ -305,7 +504,7 @@ const Content = () => {
             </div>
             <div className="instructor">
               <div className="instructor__profile">
-                <img src={'assets/images/instructor/instructor2.jpg'} alt="" />
+                <img src={'../assets/images/instructor/instructor2.jpg'} alt="" />
                 <div className="instructor__description">
                   <span>Juan Carma</span>
                   <span>Praparador Fitness</span>
@@ -317,7 +516,7 @@ const Content = () => {
             </div>
             <div className="instructor">
               <div className="instructor__profile">
-                <img src={'assets/images/instructor/instructor3.jpg'} alt="" />
+                <img src={'../assets/images/instructor/instructor3.jpg'} alt="" />
                 <div className="instructor__description">
                   <span>Carlos Salas</span>
                   <span>Suplementación</span>
@@ -329,7 +528,7 @@ const Content = () => {
             </div>
             <div className="instructor">
               <div className="instructor__profile">
-                <img src={'assets/images/instructor/instructor4.jpg'} alt="" />
+                <img src={'../assets/images/instructor/instructor4.jpg'} alt="" />
                 <div className="instructor__description">
                   <span>Pedro Gonzales</span>
                   <span>Nutricionista</span>
@@ -341,7 +540,7 @@ const Content = () => {
             </div>
             <div className="instructor">
               <div className="instructor__profile">
-                <img src={'assets/images/instructor/instructor5.jpg'} alt="" />
+                <img src={'../assets/images/instructor/instructor5.jpg'} alt="" />
                 <div className="instructor__description">
                   <span>Pedro Gonzales</span>
                   <span>Nutricionista</span>
