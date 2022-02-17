@@ -1,8 +1,7 @@
-import Content from './content/content.component';
-import Course from './course/course.component';
-import Blog from './blog/blog.component';
+import CardCourse from './card-course/card-course.component';
+import CardBlog from './card-blog/card-blog.component';
 
 export * from './card-home';
 export * from './membership-card';
 
-export { Content, Course, Blog };
+export { CardCourse, CardBlog };

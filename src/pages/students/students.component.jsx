@@ -2,8 +2,6 @@ import React from 'react';
 import './students.module.scss';
 
 const Students = () => {
-  return (
-    <h1>Hello Students</h1>
-  )
+  return <br />;
 };
 export default React.memo(Students);

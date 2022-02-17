@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Outlet } from 'react-router';
 import { Sidebar, Header } from './../components/organisms';
-import styles from './dashboard-admin.module.scss';
+// import styles from './dashboard-admin.module.scss';
 
 export const DashboardAdmin = () => {
   return (

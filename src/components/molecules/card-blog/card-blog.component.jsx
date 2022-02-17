@@ -1,11 +1,9 @@
 import React from 'react';
-import styles from './blog.module.scss';
+import styles from './card-blog.module.scss';
+import { BsStar, BsStarFill } from 'react-icons/bs';
+import { Button } from 'react-bootstrap';
 
-//images
-const playIcon = 'src/assets/icons/instructor/play.svg';
-const starIcon = 'src/assets/icons/instructor/star.svg';
-
-const Blog = () => {
+const CardBlog = () => {
   return (
     <div className={styles.blog}>
       <div className={styles.blog__description}>
@@ -15,13 +13,15 @@ const Blog = () => {
         </span>
         <div className={styles.action}>
           <span className={styles.starts}>
-            <img className={styles.start} src={starIcon} alt="" />
-            <img className={styles.start} src={starIcon} alt="" />
-            <img className={styles.start} src={starIcon} alt="" />
-            <img className={styles.start} src={starIcon} alt="" />
-            <img className={styles.start} src={starIcon} alt="" />
+            <BsStarFill fill="#ff8906" />
+            <BsStarFill fill="#ff8906" />
+            <BsStarFill fill="#ff8906" />
+            <BsStar fill="#ff8906" />
+            <BsStar fill="#ff8906" />
           </span>
-          <button className={styles.bottom}>leer mas</button>
+          <Button size="sm" style={{ color: '#fff', cursor: 'pointer' }} variant="orange">
+            leer más
+          </Button>
         </div>
       </div>
       <div className={styles.blog__preview}>
@@ -35,4 +35,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default CardBlog;

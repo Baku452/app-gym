@@ -1,7 +1,8 @@
 import React from 'react';
-import { Course, Blog } from 'components/molecules';
+import { CardCourse, CardBlog } from 'components/molecules';
 import styles from './resume.module.scss';
 import Container from '../../../node_modules/react-bootstrap/esm/Container';
+import { Button } from 'react-bootstrap';
 
 const Resume = () => {
   return (
@@ -10,15 +11,24 @@ const Resume = () => {
         <div className={styles.principal__body}>
           <h2 className={styles.title}>Cursos publicados</h2>
           <div className={styles.principal__body__courses}>
-            <Course />
-            <Course />
-            <Course />
+            <CardCourse />
+            <CardCourse />
+            <CardCourse />
+          </div>
+          <div class="text-center">
+            <Button size="sm" variant="outline-orange">
+              Ver más
+            </Button>
           </div>
           <h2 className={styles.title}>Blogs publicados</h2>
           <div className={styles.principal__body__blogs}>
-            <Blog />
-            <Blog />
-            <Blog />
+            <CardBlog />
+            <CardBlog />
+          </div>
+          <div class="text-center">
+            <Button size="sm" variant="outline-orange">
+              Ver más
+            </Button>
           </div>
         </div>
         <div className={styles.principal__profiles}>
@@ -76,7 +86,12 @@ const Resume = () => {
           </div>
           <div className={styles.principal__improvement}>
             <span>Mejores Instructores</span>
-            <button>Ver todo</button>
+            <Button
+              size="sm"
+              style={{ color: '#fff', cursor: 'pointer' }}
+              variant="orange">
+              Ver todo
+            </Button>
           </div>
           <div className={styles.principal__instructors}>
             <div className={styles.instructors}>

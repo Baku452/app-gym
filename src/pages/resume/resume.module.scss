@@ -55,6 +55,7 @@
 
 .profile {
   text-align: center;
+  margin-bottom: 8px;
 
   &__photo {
     border-radius: 10px;
@@ -73,7 +74,7 @@
   }
 
   &__photo img {
-    width: 150px;
+    width: 80px;
     border-radius: 10px;
   }
 }
@@ -83,8 +84,8 @@
    display: grid; 
    grid-template-columns: repeat(2, 4fr);
    grid-template-rows: repeat(2, auto);
-   grid-gap: 15px;
-   margin: 15px;
+   grid-gap: 10px;
+   margin: 0;
 
    .card {
     background-color: $black;
@@ -96,14 +97,12 @@
     border-radius: 5px;
 
     &__count {
-      color:  $orange;
       font-weight:  700;
       font-size: 14px;
     }
 
     &__title {
-      color:  $gray_base;
-      font-weight:  500;
+      font-weight:  700;
       font-size: 14px;
     }
    }
@@ -268,13 +267,6 @@
         color: $gray_base;
     }
 
-    .principal__profiles .principal__improvement button{
-        background: $orange;
-        color: $gray_base;
-        font-weight: 700;
-        border-radius: 5px;
-    }
-
     .principal__profiles .principal__instructors {
         display: block;
         width: 100%;
@@ -283,42 +275,47 @@
     }
 
 
-    .principal__instructors .instructors {
+    .instructors {
         background: $white;
         border-radius: 5px;
     }
 
-    .principal__instructors .instructors .instructor{
+    .instructor{
         display: flex;
         align-items: center;
         padding: 15px 15px 0 15px;
         padding-bottom: 15px;
         justify-content: space-between;
         border-bottom: 1px solid #00000030;
+
+        &__profile {
+          display: flex;
+          align-items: center;
+          width: 50%; 
+
+          img {
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+        }
+
+        &__date {
+          font-size: 10px;
+        }
+
+        &__description {
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+
+          span:first-child {
+            color: orange;
+            font-weight: 700;
+          }
+        }
     }
 
-    .principal__instructors .instructors .instructor .instructor__profile{
-        display: flex;
-        align-items: center;
-        width: 50%; 
-    }
-
-    .principal__instructors .instructors .instructor .instructor__profile img{
-        width: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-
-    .principal__instructors .instructors .instructor .instructor__description{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .principal__instructors .instructors .instructor .instructor__description span:first-child{
-        color: orange;
-        font-weight: 700;
-        font-size: 12px;
-    }
 
     .principal__body {
         background: $white;

@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './course.module.scss';
+import { BsStar, BsStarFill } from 'react-icons/bs';
+import styles from './card-course.module.scss';
 
 //images
 const playIcon = '../assets/icons/instructor/play.svg';
-const starIcon = '../assets/icons/instructor/star.svg';
 
 // https://picsum.photos/278/156
-const Course = () => {
+const CardCourse = () => {
   return (
     <div className={styles.course}>
       <div className={styles.course__preview}>
@@ -25,14 +25,14 @@ const Course = () => {
           Tips y técnicas adecuadas para el entrenamiento con barra superior.
         </span>
         <span className={styles.starts}>
-          <img className={styles.start} src={starIcon} alt="" />
-          <img className={styles.start} src={starIcon} alt="" />
-          <img className={styles.start} src={starIcon} alt="" />
-          <img className={styles.start} src={starIcon} alt="" />
-          <img className={styles.start} src={starIcon} alt="" />
+          <BsStarFill fill="#ff8906" />
+          <BsStarFill fill="#ff8906" />
+          <BsStarFill fill="#ff8906" />
+          <BsStar fill="#ff8906" />
+          <BsStar fill="#ff8906" />
         </span>
       </div>
     </div>
   );
 };
-export default React.memo(Course);
+export default React.memo(CardCourse);
