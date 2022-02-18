@@ -22,7 +22,7 @@ const Sidebar = () => {
           roundedCircle={true}
         />
       </div>
-      <div class="aside__content">
+      <div className={ styles.aside__content }>
         <Nav defaultActiveKey="/home" className="flex-column">
           <Nav.Item className={styles.nav__item}>
             <Image src={navHome} alt="nav home" />
