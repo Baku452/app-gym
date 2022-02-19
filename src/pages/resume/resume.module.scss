@@ -2,32 +2,30 @@
 
 .principal {
     display: flex;
-    flex-direction: column-reverse;
+    background: $white;
 
     &__body {
       width:100%;
-      background-color: $black; 
+      padding: 15px;
 
       .title{
         color: $gray_base;
         font-weight: 700;
         font-size: 18px;
-        padding: 15px 15px 0 15px;
       }
 
       &__courses {
         display: grid;
         height: 270px;
-        grid-template-columns: repeat(1, 4fr);
+        grid-template-columns: repeat(3, 4fr);
         grid-template-rows: auto;
         grid-gap: 15px;
-        margin: 15px;
       }
 
       &__blogs {
         display: grid;
         height: 170px;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 4fr);
         grid-template-rows: auto;
         grid-gap: 1.5px;
         margin: 15px;
@@ -37,10 +35,44 @@
 
     &__profiles {
       display:flex;
+      margin-left:10px;
       width:100%;
       flex-direction: column;
       align-items: center;
-      background-color: $orange;
+      background-color: $white;
+
+      .principal__instructors {
+        display: block;
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        background: $white;
+      }
+
+      .principal__instructor {
+        width: 100%;
+        background: $white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-top: 11px
+      }
+
+      .principal__improvement {
+        width: 100%;
+        background: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        margin-top: 8px;
+        
+        span {
+          font-weight: 700;
+          font-size: 15px;
+          color: $gray_base;
+        }
+      }
     }
 
     &__improvement,
@@ -88,7 +120,7 @@
    margin: 0;
 
    .card {
-    background-color: $black;
+    background-color: #FF890626;;
     color: $orange;
     display: flex;
     flex-direction: column;
@@ -99,262 +131,55 @@
     &__count {
       font-weight:  700;
       font-size: 14px;
+      color:  $orange;
     }
 
     &__title {
       font-weight:  700;
       font-size: 14px;
+      color:  $orange;
     }
    }
   }
 }
 
+.instructors {
+    background: $white;
+    border-radius: 5px;
+}
 
-@media only screen and (min-width: 992px) {
-    .aside {
-        display: block;
-        width:370px;
-        height:100%;
-        background: #141414;
-    }
+.instructor{
+    display: flex;
+    align-items: center;
+    padding: 15px 15px 0 15px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    border-bottom: 1px solid #00000030;
 
-    .aside__content__menu ul li {
-        padding: 10px;
-        margin-bottom: 5px;
-    }
+    &__profile {
+      display: flex;
+      align-items: center;
+      width: 50%; 
 
-    .aside__content__menu ul li:hover {
-        background: $gray_base;
-    }
-
-    .aside__content__menu ul li.active a {
-        color: $orange
-    }
-
-    .aside__log {
-        width: 100%;
-        height: 70px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .aside__log img {
-        border-radius: 50%;
+      img {
         width: 40px;
-        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
     }
 
-    .aside__content {
-        padding-left: 2px;
+    &__date {
+      font-size: 10px;
     }
 
-    .aside__content nav {
-        line-height: 30px;
-    }
+    &__description {
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
 
-    .aside__content nav ul {
-        list-style: none;
-        font-size: 14px;
+      span:first-child {
+        color: orange;
         font-weight: 700;
+      }
     }
-
-    .aside__content nav ul li a{
-        text-decoration: none;
-        color: $orange;
-    }
-
-    /* --- Header ----*/
-    header {
-        /* background-color: var(--primary); */
-        /* justify-content: space-between; */
-        /* padding: 1.5rem; */
-        /* margin-bottom: 10px; */
-        /* align-items: center; */
-        /* box-shadow: 0 2px 4px var(--gray); */
-    }
-
-    .header__menu {
-        display: none;
-    }
-
-    .header__search {
-        width: 500px;
-    }
-
-    .header__user {
-        display: flex;
-        align-items: center;
-    }
-
-    .header__user .user__icons {
-        display: block;
-        padding: 0 10px;
-    }
-
-    .header__user .user__profile {
-        display: flex;
-        align-items: center;
-    }
-
-    .header__user .user__profile .name {
-        display: block;
-        padding: 0 1rem;
-        font-weight: 500;
-    }
-    .search {
-        width: 500px;
-    }
-    .search .search__icon {
-        /* padding: 8px; */
-        /* border-radius: 5px 0 0 5px; */
-    }
-
-    .search .search__input {
-        /* width: 100%; */
-        /* margin-right: 1rem; */
-    }
-
-    .search .search__input input {
-        /* width: 100%; */
-        /* border: none; */
-        /* border-radius: 0 5px 5px 0; */
-        /* color: var(--primary); */
-        /* font-size: 1.2rem; */
-        /* padding: 8px; */
-    }
-
-    .search .search__input input::placeholder {
-        /* padding: 8px; */
-        /* font-size: 1.2rem; */
-    } 
-
-    .principal {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .principal__profiles {
-        width:600px;
-        margin: 0 10px;
-        background: $white;
-    }
-
-    .principal__profiles .principal__instructor {
-        width: 100%;
-        background: $white;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
-        margin-top: 11px
-    }
-
-    .principal__profiles .principal__improvement {
-        width: 100%;
-        background: $white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 0;
-        margin-top: 8px;
-    }
-
-    .principal__profiles .principal__improvement span{
-        font-weight: 700;
-        font-size: 15px;
-        color: $gray_base;
-    }
-
-    .principal__profiles .principal__instructors {
-        display: block;
-        width: 100%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        background: $white;
-    }
-
-
-    .instructors {
-        background: $white;
-        border-radius: 5px;
-    }
-
-    .instructor{
-        display: flex;
-        align-items: center;
-        padding: 15px 15px 0 15px;
-        padding-bottom: 15px;
-        justify-content: space-between;
-        border-bottom: 1px solid #00000030;
-
-        &__profile {
-          display: flex;
-          align-items: center;
-          width: 50%; 
-
-          img {
-            width: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-          }
-        }
-
-        &__date {
-          font-size: 10px;
-        }
-
-        &__description {
-          display: flex;
-          flex-direction: column;
-          font-size: 12px;
-
-          span:first-child {
-            color: orange;
-            font-weight: 700;
-          }
-        }
-    }
-
-
-    .principal__body {
-        background: $white;
-    }
-
-    .principal__body__courses {
-        grid-template-columns: repeat(3, 4fr);
-    }
-
-    .principal__body__blogs {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .blog,
-    .course {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .profile .profile__name {
-        color: $black;
-    }
-
-    .profile .profile__profession {
-        color: $gray_base;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .resumen .row .card {
-        background-color: #FF890626;
-    }
-
-    .resumen .row .card .card__count {
-        color:  $orange;
-    }
-
-    .resumen .row .card .card__title {
-        color:  $orange;
-    }
-
-
 }
