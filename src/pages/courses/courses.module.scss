@@ -25,9 +25,13 @@
     grid-gap: 15px;
   }
 
+  &__scheduler {
+    width: auto;
+  }
+
 
   &__courses_best {
-    width:100%;
+    flex: 0 0 283px;
     background-color: $white;
 
     .principal__improvement {

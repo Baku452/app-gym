@@ -13,7 +13,7 @@ const Resume = () => {
           <CardCourse />
           <CardCourse />
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <Button size="sm" variant="outline-orange">
             Ver más
           </Button>
@@ -23,7 +23,7 @@ const Resume = () => {
           <CardBlog />
           <CardBlog />
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <Button size="sm" variant="outline-orange">
             Ver más
           </Button>

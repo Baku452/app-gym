@@ -32,8 +32,8 @@ const Sidebar = () => {
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navClass} alt="nav class" />
-            <Link to="/instructor/class" className="nav-link">
-              Clases
+            <Link to="/instructor/courses" className="nav-link">
+              Cursos
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>

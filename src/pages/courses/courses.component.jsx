@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardCourse } from 'components/molecules';
-import styles from './class.module.scss';
+import styles from './courses.module.scss';
 import { Button } from 'react-bootstrap';
 import Tabs from '../../../node_modules/react-bootstrap/esm/Tabs';
 import { Tab } from 'bootstrap';
@@ -9,7 +9,7 @@ import { BsStar, BsStarFill } from 'react-icons/bs';
 //images
 const playIcon = '../assets/icons/instructor/play.svg';
 
-const Class = () => {
+const Courses = () => {
   return (
     <div className={styles.principal}>
       <div>
@@ -185,4 +185,4 @@ const Class = () => {
     </div>
   );
 };
-export default React.memo(Class);
+export default React.memo(Courses);
