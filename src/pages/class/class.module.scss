@@ -1,14 +1,5 @@
 @import 'src/scss/style.scss';
 
-.test {
-  width: 100%;
-
-  .custom-tab {
-    border-bottom: 1px solid orange;
-    color: orange;
-  }
-}
-
 .principal {
   display: flex;
   background: $white;
@@ -28,7 +19,7 @@
 
   &__courses {
     display: grid;
-    height: 270px;
+    height: auto;
     grid-template-columns: repeat(3, 4fr);
     grid-template-rows: auto;
     grid-gap: 15px;

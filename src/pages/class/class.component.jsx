@@ -12,7 +12,7 @@ const playIcon = '../assets/icons/instructor/play.svg';
 const Class = () => {
   return (
     <div className={styles.principal}>
-      <div className="test">
+      <div>
         <Tabs defaultActiveKey="saved" id="uncontrolled-tab-example" className="mb-3">
           <Tab className="custom-tab" eventKey="saved" title="Clases Grabadas">
             <div className={styles.principal__body}>
