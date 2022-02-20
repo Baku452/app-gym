@@ -14,7 +14,7 @@ const Courses = () => {
   return (
     <div className={styles.principal}>
       <div className="w-100">
-        <Tabs defaultActiveKey="direct" id="uncontrolled-tab-example" className="mb-3">
+        <Tabs defaultActiveKey="saved" id="uncontrolled-tab-example" className="mb-3">
           <Tab className="custom-tab" eventKey="saved" title="Clases Grabadas">
             <div className={styles.principal__body}>
               <div className={styles.principal__courses}>

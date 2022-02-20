@@ -22,35 +22,35 @@ const Sidebar = () => {
           roundedCircle={true}
         />
       </div>
-      <div className={ styles.aside__content }>
+      <div className={styles.aside__content}>
         <Nav defaultActiveKey="/home" className="flex-column">
           <Nav.Item className={styles.nav__item}>
             <Image src={navHome} alt="nav home" />
-            <Link to="/instructor/dashboard" className="nav-link">
+            <Link to="/instructor/dashboard" className={styles.custom_sidebar__nav_link}>
               Dasboard
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navClass} alt="nav class" />
-            <Link to="/instructor/courses" className="nav-link">
+            <Link to="/instructor/courses" className={styles.custom_sidebar__nav_link}>
               Cursos
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navStudents} alt="nav students" />
-            <Link to="/instructor/students" className="nav-link">
+            <Link to="/instructor/students" className={styles.custom_sidebar__nav_link}>
               Estudiantes
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navBlogs} alt="nav blog" />
-            <Link to="/instructor/blogs" className="nav-link">
+            <Link to="/instructor/blogs" className={styles.custom_sidebar__nav_link}>
               Blogs
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navConfig} alt="nav config" />
-            <Link to="/instructor/configs" className="nav-link">
+            <Link to="/instructor/configs" className={styles.custom_sidebar__nav_link}>
               Configuraciones
             </Link>
           </Nav.Item>

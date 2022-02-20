@@ -8,7 +8,7 @@ const Blogs = () => {
   return (
     <div className={styles.principal}>
       <div className={styles.principal__body}>
-        <h2 className={styles.title}>Cursos publicados</h2>
+        <h2 className={styles.title}>Blogs publicados</h2>
         <div className={styles.principal__body__blogs}>
           <CardBlog />
           <CardBlog />
