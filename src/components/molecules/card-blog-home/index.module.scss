@@ -1,0 +1,45 @@
+@import '~scss/_variables.scss';
+
+.cardBlog {
+  color: #fff;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  .cardBlog__box {
+    position: relative;
+    width: 100%;
+    .cardBlog__content {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: 0.4s ease;
+
+      background: rgba($color: #0e0e0e75, $alpha: 0.7);
+      &:hover {
+        background: rgba($color: $primary, $alpha: 0.5);
+      }
+    }
+    .cardBlog__img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .cardBlog__category {
+      cursor: pointer;
+      width: fit-content;
+      padding: 0.5rem 2rem;
+      border-radius: 3px;
+      display: inline-block !important;
+      background: transparent;
+      margin-top: auto;
+      transition: 0.2s ease;
+      &:hover {
+        color: #000;
+        background: #fff;
+      }
+    }
+  }
+}

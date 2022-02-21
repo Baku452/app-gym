@@ -1,0 +1,33 @@
+@import 'src/scss/_variables.scss';
+@import '~bootstrap/scss/functions';
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'orange': $orange,
+);
+
+.nav-link {
+  color: $white;
+  font-size: 16px;
+  font-weight: bold;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.nav-item {
+  &:hover {
+    background-color: #505d74;
+  }
+
+  &:focus,
+  &:link,
+  &:checked,
+  &:visited {
+    background-color: #505d74;
+    color: $white;
+  }
+}
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';

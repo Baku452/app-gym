@@ -1,0 +1,29 @@
+@import 'scss/style.scss';
+
+.aside {
+  background-color: $menu;
+  flex: 0 0 236px;
+  color: $white;
+  height: 100vh;
+
+  &_logo {
+    background-color: $menu-logo;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_figure {
+      width: 25px;
+    }
+  }
+
+}
+
+.nav {
+  &__item {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding-left: 20px;
+  }
+}

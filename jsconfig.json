@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "es6",
+    "module": "es6",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react"
+  },
+  "exclude": ["build", "coverage", "dist", "lib", "app"]
+}

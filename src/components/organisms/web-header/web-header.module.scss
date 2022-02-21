@@ -1,0 +1,17 @@
+@import '../../../scss/variables';
+.header {
+  background: transparent !important;
+  a {
+    font-size: 18px;
+    font-weight: normal;
+    color: #fff !important;
+    font-weight: bold;
+  }
+  .header__link {
+    transition: 0.2s ease;
+    margin: 0 1rem;
+    &:hover {
+      color: $primary !important;
+    }
+  }
+}
