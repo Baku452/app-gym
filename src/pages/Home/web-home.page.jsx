@@ -1,9 +1,10 @@
 import { LayoutWeb } from 'layout/index.js';
 import styles from './web-home.module.scss';
 import { WebBanner } from 'components/index';
-import { CardHome, MembershipCard } from 'components/molecules/index';
+import { CardHome, MembershipCard, BlogCardHome } from 'components/molecules/index';
+import { ShapeDividerTop, ShapeDividerTopWhite } from 'components/atoms/index';
 import { Container, Col, Row } from 'react-bootstrap';
-import { services, membership } from 'data/home/index.js';
+import { services, membership, postsBlog } from 'data/index.js';
 
 const WebHome = () => {
   return (
@@ -12,9 +13,6 @@ const WebHome = () => {
         <WebBanner image={'img/HomeBanner.jpg'} />
         <div className={styles.containerHome}>
           <Container>
-            {/* <Row className="p-5">
-              <h2 className="text-center text-white">Our Trainings</h2>
-            </Row> */}
             <Row>
               {services.map(item => (
                 <CardHome item={item} />
@@ -42,17 +40,7 @@ const WebHome = () => {
         </div>
         <div className={'position-relative py-5'}>
           <Container>
-            <div className={styles.divider}>
-              <svg
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                  d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-                  className={styles.divider__shapeFill}></path>
-              </svg>
-            </div>
+            <ShapeDividerTop />
             <Row className="p-5">
               <h2 className="pb-5">Membership</h2>
               {membership.map(item => (
@@ -60,6 +48,33 @@ const WebHome = () => {
               ))}
             </Row>
           </Container>
+        </div>
+        <div className={styles.containerHome}>
+          <Container>
+            <ShapeDividerTopWhite />
+            <Row className="p-5 mb-5" />
+            <Row className="mb-5" />
+            <Row>
+              <Col md={12} lg={4}>
+                <h2 className="pt-5">Our Blog</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
+                  necessitatibus porro corrupti sapiente? Ipsum quia quas placeat culpa
+                  dolor atque omnis reprehenderit temporibus mollitia nostrum, id deleniti
+                  molestiae. Veritatis, aliquid.
+                </p>
+                <h3>Read All blogs</h3>
+              </Col>
+              <Col md={12} lg={8}>
+                <Row>
+                  {postsBlog.map(item => (
+                    <BlogCardHome item={item} />
+                  ))}
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+          <ShapeDividerTopWhite />
         </div>
         {/*
         <Container>

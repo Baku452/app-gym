@@ -4,5 +4,6 @@ import CardBlog from './card-blog/card-blog.component';
 
 export * from './card-home';
 export * from './membership-card';
+export * from './card-blog-home';
 
 export { CardCourse, CardBlog, CardStudent };

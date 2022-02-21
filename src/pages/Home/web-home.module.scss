@@ -35,29 +35,3 @@
   align-self: center;
   text-align: left;
 }
-
-.divider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-.divider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 135px;
-  }
-  .divider__shapeFill {
-    fill: #0f0e17;
-  }
-}
