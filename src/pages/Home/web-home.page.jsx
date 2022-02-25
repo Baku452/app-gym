@@ -1,7 +1,12 @@
 import { LayoutWeb } from 'layout/index.js';
 import styles from './web-home.module.scss';
 import { WebBanner } from 'components/index';
-import { CardHome, MembershipCard, BlogCardHome } from 'components/molecules/index';
+import {
+  CardHome,
+  MembershipCard,
+  BlogCardHome,
+  NewsletterForm,
+} from 'components/molecules/index';
 import { ShapeDividerTop, ShapeDividerTopWhite } from 'components/atoms/index';
 import { Container, Col, Row } from 'react-bootstrap';
 import { services, membership, postsBlog } from 'data/index.js';
@@ -76,20 +81,20 @@ const WebHome = () => {
           </Container>
           <ShapeDividerTopWhite />
         </div>
-        {/*
+
         <Container>
-        <Row className="p-5">
-            <h2 className="text-center">Our Pricings</h2>
+          <Row className="justify-content-center align-items-center p-5">
+            <Col className="align-self-center" md={12} lg={5}>
+              <h2>Newsletter</h2>
+              <p>
+                Join our amazing community! Stay informed of our latest discounts and news
+              </p>
+            </Col>
+            <Col className="p-5" md={12} lg>
+              <NewsletterForm />
+            </Col>
           </Row>
-          <Row className="justify-content-center">
-            {pricing.map(item => (
-              <Col lg={3}>
-                <h3>{item.title}</h3>
-                <p>{item.content}</p>
-              </Col>
-            ))}
-          </Row>
-        </Container> */}
+        </Container>
       </LayoutWeb>
     </>
   );
