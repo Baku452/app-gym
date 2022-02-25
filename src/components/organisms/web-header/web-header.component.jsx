@@ -9,7 +9,7 @@ const WebHeader = () => {
     <Navbar sticky="top" bg="dark" expand="lg" className={styles.header}>
       <Container className="justify-content-between">
         <div>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img alt="logo" src="icons/LogoTrackG.png"></img>
           </Navbar.Brand>
         </div>
