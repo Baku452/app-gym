@@ -5,9 +5,8 @@
   background: $white;
 
   &__body {
-    width:100%;
-    padding-right: 15px;
-    padding-top: 15px;
+    display: flex;
+    position: relative;
 
     .title{
       color: $gray_base;
@@ -15,19 +14,29 @@
       font-size: 18px;
     }
 
-    &__blogs {
-      display: grid;
-      height: auto;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
-      grid-gap: 15px;
-    }
-
   }
 
-  &__blogs_best {
-    width:100%;
+  &__courses {
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(3, 4fr);
+    grid-template-rows: auto;
+    grid-gap: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+  }
+
+  &__scheduler {
+    width: 100%;
+  }
+
+
+  &__courses_best {
     background-color: $white;
+    width: 283px;
+    position: absolute;
+    right: 0;
+    top: -35px;
 
     .principal__improvement {
       width: 100%;
@@ -44,11 +53,18 @@
       }
     }
 
-  }
+    .principal__courses {
+      display: block;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      background: $white;
+    }
 
+  }
 }
 
-.blog {
+.course {
 
   &__preview {
     position: relative;
@@ -69,18 +85,27 @@
     border-radius: 5px;
   }
 
+  &__play {
+    position: absolute;
+    right: 35%;
+    top: 15%;
+    margin: 0 auto;
+    width:20px;
+    cursor: pointer;
+
+    &__hover {
+      cursor: pointer;
+    }
+  }
+
 }
 
-.blogs {
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.courses {
     background: $white;
+    border-radius: 5px;
 }
 
-.blog {
+.course{
     display: flex;
     align-items: center;
     padding: 15px 15px 0 15px;
@@ -96,16 +121,16 @@
       width: 100%; 
       font-size: 12px;
 
-      .blog__title {
+      .course__title {
         font-weight: 700;
         color: $gray_base;
       }
 
-      .blog__instructor {
+      .course__instructor {
         color: $orange;
       }
 
-      .blog__date {
+      .course__date {
         font-weight: 400;
         color: $gray_base;
         font-size: 11px;
@@ -116,6 +141,4 @@
       font-size: 10px;
     }
 
-
 }
-

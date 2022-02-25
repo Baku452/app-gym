@@ -17,6 +17,28 @@ $theme-colors: (
   }
 }
 
+ul[role="tablist"] {
+  border: none !important;
+  margin: 0 !important;
+
+  li:hover {
+    background: transparent !important;
+  }
+}
+
+button[role="tab"] {
+  border: none !important;
+  color: $gray_base !important;
+  &:hover {
+    background-color: transparent !important;
+  }
+
+  &.active {
+    color: $orange !important;
+    border-bottom: 1px solid $orange !important;
+  }
+}
+
 .nav-item {
   &:hover {
     background-color: #505d74;
