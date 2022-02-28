@@ -1,5 +1,9 @@
 import styles from './index.module.scss';
 
+const LineDivider = () => {
+  return <hr className={styles.lineDivider}></hr>;
+};
+
 const ShapeDividerTop = () => {
   return (
     <div className={styles.dividerTop}>
@@ -32,4 +36,4 @@ const ShapeDividerTopWhite = () => {
   );
 };
 
-export { ShapeDividerTop, ShapeDividerTopWhite };
+export { LineDivider, ShapeDividerTop, ShapeDividerTopWhite };

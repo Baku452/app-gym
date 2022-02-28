@@ -6,5 +6,6 @@ export * from './card-home';
 export * from './membership-card';
 export * from './card-blog-home';
 export * from './newsletterForm';
+export * from './form-login';
 
 export { CardCourse, CardBlog, CardStudent };

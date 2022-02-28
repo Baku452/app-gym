@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { Button } from 'react-bootstrap';
 import styles from './web-header.module.scss';
+import { Link } from 'react-router-dom';
 
 const WebHeader = () => {
   return (
@@ -10,7 +11,9 @@ const WebHeader = () => {
       <Container className="justify-content-between">
         <div>
           <Navbar.Brand href="/">
-            <img alt="logo" src="icons/LogoTrackG.png"></img>
+            <Link to="/">
+              <img alt="logo" src="icons/LogoTrackG.png"></img>
+            </Link>
           </Navbar.Brand>
         </div>
         <div>
@@ -32,7 +35,9 @@ const WebHeader = () => {
               <Nav.Link className={styles.header__link} href="#link">
                 Shop
               </Nav.Link>
-              <Button className="me-4">Enter to gym</Button>
+              <Link to="/login">
+                <Button className="me-4">Enter to gym</Button>
+              </Link>
               <Button variant="secondary">Sign-Up</Button>
             </Nav>
           </Navbar.Collapse>

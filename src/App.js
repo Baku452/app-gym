@@ -1,16 +1,20 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import WebHome from './pages/Home/web-home.page';
+import { LayoutWeb } from 'layout/index';
 import { DashboardAdmin } from './layout/dashboard-admin.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.scss';
-import { Resume, Courses, Students, Blogs, Configs } from './pages';
+import { WebHome, Login, Resume, Courses, Students, Blogs, Configs } from './pages';
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<WebHome />} />
+        <Route path="/" element={<LayoutWeb />}>
+          <Route path="/" element={<WebHome />} />
+          <Route path="login" element={<Login />} />
+          {/* <Route path="login" element={<Login />} /> */}
+        </Route>
         <Route path="instructor" element={<DashboardAdmin />}>
           <Route path="dashboard" element={<Resume />} />
           <Route path="courses" element={<Courses />} />
