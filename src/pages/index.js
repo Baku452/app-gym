@@ -5,5 +5,19 @@ import Resume from './resume/resume.component';
 import Students from './students/students.component';
 import WebHome from './home/web-home.page';
 import Login from './login/index';
+import SignUp from './sign-up/signUp';
+import RecoverPassword from './recover-password/recoverPassword';
+import Shop from './shop/shop';
 
-export { WebHome, Login, Blogs, Courses, Configs, Resume, Students };
+export {
+  WebHome,
+  Login,
+  SignUp,
+  RecoverPassword,
+  Shop,
+  Blogs,
+  Courses,
+  Configs,
+  Resume,
+  Students,
+};

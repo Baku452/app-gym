@@ -1,21 +1,20 @@
-import { FormLogin, DontAccount } from 'components/molecules/index';
+import { FormSignUp } from 'components/molecules/index';
 import { LineDivider } from 'components/atoms/index';
 import { Container, Row, Col } from 'react-bootstrap';
 
-const Login = () => {
+const SignUp = () => {
   return (
     <>
       <Container>
         <Row className="p-5">
           <Col>
-            <h1 className="fw-bold">Access</h1>
+            <h1 className="fw-bold">Sign Up</h1>
           </Col>
         </Row>
         <Row>
           <Col className="m-auto" lg={6}>
-            <FormLogin />
+            <FormSignUp />
             <LineDivider />
-            <DontAccount />
           </Col>
         </Row>
       </Container>
@@ -23,4 +22,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

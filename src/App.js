@@ -4,16 +4,29 @@ import { LayoutWeb } from 'layout/index';
 import { DashboardAdmin } from './layout/dashboard-admin.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.scss';
-import { WebHome, Login, Resume, Courses, Students, Blogs, Configs } from './pages';
+import {
+  WebHome,
+  Login,
+  SignUp,
+  RecoverPassword,
+  Shop,
+  Resume,
+  Courses,
+  Students,
+  Blogs,
+  Configs,
+} from './pages';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<LayoutWeb />}>
           <Route path="/" element={<WebHome />} />
           <Route path="login" element={<Login />} />
-          {/* <Route path="login" element={<Login />} /> */}
+          <Route path="sign-up" element={<SignUp />} />
+          <Route path="recover-password" element={<RecoverPassword />} />
+          <Route path="shop" element={<Shop />} />
         </Route>
         <Route path="instructor" element={<DashboardAdmin />}>
           <Route path="dashboard" element={<Resume />} />

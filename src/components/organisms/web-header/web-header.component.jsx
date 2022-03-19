@@ -20,10 +20,12 @@ const WebHeader = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto ">
-              <Nav.Link className={styles.header__link} href="#home">
-                Home
-              </Nav.Link>
-              <Nav.Link className={styles.header__link} href="#link">
+              <Link to="/">
+                <Nav.Link className={styles.header__link} href="#home">
+                  Home
+                </Nav.Link>
+              </Link>
+              {/* <Nav.Link className={styles.header__link} href="#link">
                 About Us
               </Nav.Link>
               <Nav.Link className={styles.header__link} href="#link">
@@ -31,14 +33,18 @@ const WebHeader = () => {
               </Nav.Link>
               <Nav.Link className={styles.header__link} href="#link">
                 Blog
-              </Nav.Link>
-              <Nav.Link className={styles.header__link} href="#link">
-                Shop
-              </Nav.Link>
+              </Nav.Link> */}
+              <Link to="/shop">
+                <Nav.Link className={styles.header__link} href="#link">
+                  Shop
+                </Nav.Link>
+              </Link>
               <Link to="/login">
                 <Button className="me-4">Enter to gym</Button>
               </Link>
-              <Button variant="secondary">Sign-Up</Button>
+              <Link to="/sign-up">
+                <Button variant="secondary">Sign-Up</Button>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </div>
