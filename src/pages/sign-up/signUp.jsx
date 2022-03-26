@@ -1,4 +1,4 @@
-import { FormSignUp } from 'components/molecules/index';
+import { FormRegister } from 'components/molecules/index';
 import { LineDivider } from 'components/atoms/index';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -13,7 +13,7 @@ const SignUp = () => {
         </Row>
         <Row>
           <Col className="m-auto" lg={6}>
-            <FormSignUp />
+            <FormRegister />
             <LineDivider />
           </Col>
         </Row>

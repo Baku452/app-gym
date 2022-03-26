@@ -2,9 +2,7 @@
 
 .navbar {
   // box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(0,0,0, .1);
-  height: 60px;
-  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   &__logo {
     display: block !important;
@@ -14,27 +12,18 @@
   &__right {
     display: flex;
     align-items: center;
-
   }
 }
 
-
 .profile_photo {
   margin-left: 15px;
-}
-
-.user_name {
-  margin-left: 4px;
-  font-size: 14px;
-  color: $gray_base;
-  font-weight: bold;
 }
 
 .search {
   width: 228px;
   height: 30px;
   border: 1px solid $orange;
-  display:flex;
+  display: flex;
   align-items: center;
   border-radius: 15px;
 

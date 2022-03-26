@@ -7,5 +7,6 @@ export * from './membership-card';
 export * from './card-blog-home';
 export * from './newsletterForm';
 export * from './form-login';
+export * from './form-register/formRegister';
 
 export { CardCourse, CardBlog, CardStudent };

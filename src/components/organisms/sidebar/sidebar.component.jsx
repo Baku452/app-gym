@@ -13,7 +13,7 @@ const navConfig = '../assets/icons/instructor/nav-config.svg';
 
 const Sidebar = () => {
   return (
-    <div className={styles.aside}>
+    <aside className={styles.aside}>
       <div className={styles.aside_logo}>
         <Image
           className={styles.aside_logo_figure}
@@ -26,8 +26,8 @@ const Sidebar = () => {
         <Nav defaultActiveKey="/home" className="flex-column">
           <Nav.Item className={styles.nav__item}>
             <Image src={navHome} alt="nav home" />
-            <Link to="/instructor/dashboard" className={styles.custom_sidebar__nav_link}>
-              Dasboard
+            <Link to="/instructor/" className={styles.custom_sidebar__nav_link}>
+              Dashboard
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
@@ -56,7 +56,7 @@ const Sidebar = () => {
           </Nav.Item>
         </Nav>
       </div>
-    </div>
+    </aside>
   );
 };
 export default React.memo(Sidebar);
