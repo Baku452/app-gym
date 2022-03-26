@@ -7,7 +7,7 @@ import './calendar.scss';
 const start = new Date();
 const end = new Date(new Date().setMinutes(start.getMinutes() + 60));
 const attendees = [
-  { id: '1', name: 'Chin'},
+  { id: '1', name: 'Chin' },
   { id: '2', name: 'Khanh' },
   { id: '3', name: 'Linh' },
   { id: '4', name: 'Hai' },
