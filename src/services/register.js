@@ -3,7 +3,7 @@ import axios from 'axios';
 export default async function registerService({ values }) {
   try {
     const res = await axios.post(
-      `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/`,
+      `${process.env.REACT_APP_API_URL}/api/v1/users/`,
       values,
     );
   } catch (error) {

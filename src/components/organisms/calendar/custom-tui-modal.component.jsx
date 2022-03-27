@@ -1,5 +1,5 @@
 // import { Modal } from 'bootstrap';
-import { Modal } from "reactstrap";
+import { Modal } from 'reactstrap';
 
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 

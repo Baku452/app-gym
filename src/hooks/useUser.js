@@ -10,13 +10,13 @@ export default function useUser() {
       loginService({ username, password })
         .then(data => {
           window.sessionStorage.setItem('jwt', data.token);
-          const { user } = data;
-          console.log(user);
           setJWT(data.token);
+          const { user } = data;
           setFullName(user.fullName);
+          window.sessionStorage.setItem('fullName', user.fullName);
         })
         .catch(e => {
-          console.log(console.error());
+          throw new Error(e);
         });
     },
     [setJWT, setFullName],
