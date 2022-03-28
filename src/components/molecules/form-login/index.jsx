@@ -1,5 +1,8 @@
-import { Form, Button, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
+import useUser from 'hooks/useUser';
+import { useForm } from 'react-hook-form';
+import { useEffect } from 'react';
 
 const DontAccount = () => {
   return (
@@ -15,88 +18,38 @@ const DontAccount = () => {
 };
 
 const FormLogin = () => {
+  const { login, isLogged } = useUser();
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+
+  const onSubmit = values => {
+    login(values);
+  };
+
+  useEffect(() => {
+    if (isLogged) navigate('/dashboard');
+  }, [isLogged, navigate]);
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group className="mb-4">
-        <Form.Label>Email </Form.Label>
-        <Form.Control type="email" placeholder="your-email@example.com"></Form.Control>
-        <Link to="/recover-password">Forgot Password?</Link>
+        <Form.Label>Username </Form.Label>
+        <Form.Control
+          {...register('username', { required: true })}
+          type="text"
+          placeholder="username"></Form.Control>
       </Form.Group>
       <Form.Group className="mb-4">
         <Form.Label>Password </Form.Label>
-        <Form.Control type="password" placeholder="Password"></Form.Control>
+        <Form.Control
+          {...register('password', { required: true })}
+          type="password"
+          placeholder="Password"></Form.Control>
+        <Link to="/recover-password">Forgot Password?</Link>
       </Form.Group>
       <div className="text-center">
         <Button className="mb-4 mx-0 px-5" variant="primary" type="submit">
           Log In
-        </Button>
-      </div>
-    </Form>
-  );
-};
-
-const FormSignUp = () => {
-  return (
-    <Form>
-      <Form.Group className="mb-4">
-        <Form.Label>Username</Form.Label>
-        <Form.Control
-          name="username"
-          type="text"
-          placeholder="i.e TrackUser"></Form.Control>
-      </Form.Group>
-      <Form.Group className="mb-4">
-        <Form.Label>Password </Form.Label>
-        <Form.Control
-          name="password"
-          type="password"
-          placeholder="Password"></Form.Control>
-      </Form.Group>
-      <Row>
-        <Col md={12} lg={7}>
-          <Form.Group className="mb-4">
-            <Form.Label>First Name</Form.Label>
-            <Form.Control name="firstName" type="text"></Form.Control>
-          </Form.Group>
-        </Col>
-        <Col md={12} lg={true}>
-          <Form.Group className="mb-4">
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control name="lastName" type="text"></Form.Control>
-          </Form.Group>
-        </Col>
-      </Row>
-      <Form.Group className="mb-4">
-        <Form.Label>Email </Form.Label>
-        <Form.Control
-          name="email"
-          type="email"
-          placeholder="email@trackg.com"></Form.Control>
-      </Form.Group>
-      <Form.Group className="mb-4">
-        <Form.Label>Phone </Form.Label>
-        <Form.Control name="phone" type="text" placeholder="Phone number"></Form.Control>
-      </Form.Group>
-      <Form.Group className="mb-4">
-        <Col lg={12}>
-          <Form.Label>Gender </Form.Label>
-        </Col>
-        <Form.Check type="radio" inline label="Male" name="gender" id="gender" />
-        <Form.Check type="radio" inline label="Female" name="gender" id="gender" />
-        <Form.Check
-          type="radio"
-          inline
-          label="Prefer not to say"
-          name="gender"
-          id="gender"
-        />
-      </Form.Group>
-      <div className="py-5">
-        <p>By clicking on sign-up, you agree to Track G Terms and Conditions of Use.</p>
-      </div>
-      <div className="text-center">
-        <Button className="mb-4 mx-auto px-5" variant="primary" type="submit">
-          Sign Up
         </Button>
       </div>
     </Form>
@@ -119,4 +72,4 @@ const FormRecoverPassword = () => {
   );
 };
 
-export { FormLogin, FormRecoverPassword, DontAccount, FormSignUp };
+export { FormLogin, FormRecoverPassword, DontAccount };

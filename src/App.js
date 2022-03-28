@@ -1,7 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LayoutWeb } from 'layout/index';
-import { DashboardAdmin } from './layout/dashboard-admin.component';
+import { DashboardAdmin } from './layout/dashboard/dashboard-admin.component';
+import { UserContextProvider } from 'context/UserContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.scss';
 import {
@@ -19,7 +20,7 @@ import {
 
 function App() {
   return (
-    <div>
+    <UserContextProvider>
       <Routes>
         <Route path="/" element={<LayoutWeb />}>
           <Route path="/" element={<WebHome />} />
@@ -28,7 +29,7 @@ function App() {
           <Route path="recover-password" element={<RecoverPassword />} />
           <Route path="shop" element={<Shop />} />
         </Route>
-        <Route path="instructor" element={<DashboardAdmin />}>
+        <Route path="dashboard" element={<DashboardAdmin />}>
           <Route path="dashboard" element={<Resume />} />
           <Route path="courses" element={<Courses />} />
           <Route path="students" element={<Students />} />
@@ -36,7 +37,7 @@ function App() {
           <Route path="configs" element={<Configs />} />
         </Route>
       </Routes>
-    </div>
+    </UserContextProvider>
   );
 }
 export default App;

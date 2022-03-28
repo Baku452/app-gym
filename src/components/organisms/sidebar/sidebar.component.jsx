@@ -13,7 +13,7 @@ const navConfig = '../assets/icons/instructor/nav-config.svg';
 
 const Sidebar = () => {
   return (
-    <div className={styles.aside}>
+    <aside className={styles.aside}>
       <div className={styles.aside_logo}>
         <Image
           className={styles.aside_logo_figure}
@@ -26,37 +26,37 @@ const Sidebar = () => {
         <Nav defaultActiveKey="/home" className="flex-column">
           <Nav.Item className={styles.nav__item}>
             <Image src={navHome} alt="nav home" />
-            <Link to="/instructor/dashboard" className={styles.custom_sidebar__nav_link}>
-              Dasboard
+            <Link to="/dashboard/" className={styles.custom_sidebar__nav_link}>
+              Dashboard
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navClass} alt="nav class" />
-            <Link to="/instructor/courses" className={styles.custom_sidebar__nav_link}>
+            <Link to="/dashboard/courses" className={styles.custom_sidebar__nav_link}>
               Cursos
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navStudents} alt="nav students" />
-            <Link to="/instructor/students" className={styles.custom_sidebar__nav_link}>
+            <Link to="/dashboard/students" className={styles.custom_sidebar__nav_link}>
               Estudiantes
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navBlogs} alt="nav blog" />
-            <Link to="/instructor/blogs" className={styles.custom_sidebar__nav_link}>
+            <Link to="/dashboard/blogs" className={styles.custom_sidebar__nav_link}>
               Blogs
             </Link>
           </Nav.Item>
           <Nav.Item className={styles.nav__item}>
             <Image src={navConfig} alt="nav config" />
-            <Link to="/instructor/configs" className={styles.custom_sidebar__nav_link}>
+            <Link to="/dashboard/configs" className={styles.custom_sidebar__nav_link}>
               Configuraciones
             </Link>
           </Nav.Item>
         </Nav>
       </div>
-    </div>
+    </aside>
   );
 };
 export default React.memo(Sidebar);
