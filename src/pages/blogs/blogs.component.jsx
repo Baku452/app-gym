@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './blogs.module.scss';
 import { CardBlog } from 'components/molecules';
 import { Button, Modal } from 'react-bootstrap';
@@ -8,37 +8,87 @@ import Col from '../../../node_modules/react-bootstrap/esm/Col';
 
 import Repository from '../../repositories/factory/RepositoryFactory';
 import Form from '../../../node_modules/react-bootstrap/esm/Form';
+import Edit from '../../components/atoms/edit/edit.component';
+
 const BusinessObjectRepository = Repository.get('businessObject');
 
 const Blogs = () => {
+  // Modal
   const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
-
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [content, setContent] = useState('');
-  const [urlImage, setUrlImage] = useState('');
-
-  const onBlogFormSubmit = async e => {
-    e.preventDefault();
-
-    const payload = prepareBlog({ name, description, content, urlImage });
-    // const blog = await BusinessObjectRepository.store(payload);
-    // console.log('register blog is: ', blog)
-
-    handleClose();
+  const hiddenBlogFormModal = () => setShow(false);
+  const showBlogFormModal = () => {
+    setShow(true);
+    setBlog(prepareBlog());
   };
 
-  const prepareBlog = ({ name, description, content, urlImage }) => {
+  const prepareBlog = () => {
+    return {
+      name: '',
+      description: '',
+      business_object_type: 'blog',
+      content: '',
+      urlImage: '',
+    };
+  };
+
+  // Form
+  const [blog, setBlog] = useState({});
+
+  const handleBlogChange = e => {
+    let updatedValue = {};
+    updatedValue = { [`${e.target.name}`]: e.target.value };
+    setBlog(blog => ({
+      ...blog,
+      ...updatedValue,
+    }));
+  };
+
+  const setBlogContent = text => {
+    setBlog(blog => ({
+      ...blog,
+      ...{ content: text },
+    }));
+  };
+
+  // blog
+  const [blogs, setBlogs] = useState([]);
+
+  // localStorage.setItem('tours', JSON.stringify(dataTour));
+
+  const saveBlog = async function (e) {
+    e.preventDefault();
+
+    const payload = blogFormat(blog);
+    await BusinessObjectRepository.store(payload);
+    fetchBlogs();
+
+    hiddenBlogFormModal();
+  };
+
+  const blogFormat = ({ name, business_object_type, description, content, urlImage }) => {
     return {
       name,
-      type: 'blog',
+      business_object_type,
       description,
       urlImage,
       content,
     };
   };
+
+  const fetchBlogs = async () => {
+    try {
+      const { data } = await BusinessObjectRepository.get({
+        business_object_type: 'blog',
+      });
+      setBlogs(data);
+    } catch (err) {
+      console.error('Error get blogs: ', err);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
 
   return (
     <div className={styles.principal}>
@@ -48,7 +98,7 @@ const Blogs = () => {
             <h2 className={styles.title}>Blogs publicados</h2>
           </Col>
           <Col md={2}>
-            <Button onClick={handleShow} variant="outline-orange" size="sm">
+            <Button onClick={showBlogFormModal} variant="outline-orange" size="sm">
               Subir Blog
             </Button>
           </Col>
@@ -181,19 +231,20 @@ const Blogs = () => {
         </div>
       </div>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={hiddenBlogFormModal}>
         <Modal.Header closeButton>
           <Modal.Title>Registro de Blog</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={onBlogFormSubmit}>
+          <Form>
             <Form.Group controlId="formName">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
+                name="name"
                 type="text"
-                placeholder="Ingrese Tema "
-                value={name}
-                onChange={e => setName(e.target.value)}
+                placeholder="Ingrese Tema"
+                value={blog.name}
+                onChange={e => handleBlogChange(e)}
               />
             </Form.Group>
 
@@ -201,9 +252,10 @@ const Blogs = () => {
               <Form.Label>Descripción</Form.Label>
               <Form.Control
                 type="text"
+                name="description"
                 placeholder="Ingrese Descripción "
-                value={description}
-                onChange={e => setDescription(e.target.value)}
+                value={blog.description}
+                onChange={e => handleBlogChange(e)}
               />
             </Form.Group>
 
@@ -211,29 +263,24 @@ const Blogs = () => {
               <Form.Label>Imagen de Presentación</Form.Label>
               <Form.Control
                 type="file"
+                name="urlImage"
                 placeholder="Ingrese image"
-                value={urlImage}
-                onChange={e => setUrlImage(e.target.value)}
+                value={blog.urlImage}
+                onChange={e => handleBlogChange(e)}
               />
             </Form.Group>
 
             <Form.Group controlId="formContent">
               <Form.Label>Contenido</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Ingrese Cotenido "
-                value={content}
-                onChange={e => setContent(e.target.value)}
-              />
+              <Edit value={blog.content} onChange={setBlogContent} />
             </Form.Group>
-
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={hiddenBlogFormModal}>
             Cancelar
           </Button>
-          <Button variant="primary" type="submit" block>
+          <Button variant="primary" onClick={saveBlog}>
             Guardar
           </Button>
         </Modal.Footer>
