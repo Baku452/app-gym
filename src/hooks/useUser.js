@@ -22,7 +22,7 @@ export default function useUser() {
           throw new Error(e);
         });
     },
-    [setJWT, setFullName, setRoles],
+    [setJWT, setFullName],
   );
 
   const logout = useCallback(() => {
