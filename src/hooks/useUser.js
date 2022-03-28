@@ -3,23 +3,26 @@ import { useContext, useCallback } from 'react';
 import loginService from 'services/loginService';
 
 export default function useUser() {
-  const { jwt, setFullName, setJWT } = useContext(Context);
+  const { jwt, setFullName, setJWT, setRoles } = useContext(Context);
 
   const login = useCallback(
     ({ username, password }) => {
       loginService({ username, password })
         .then(data => {
-          window.sessionStorage.setItem('jwt', data.token);
+          const { user, roles } = data;
+
           setJWT(data.token);
-          const { user } = data;
           setFullName(user.fullName);
+          // setRoles(roles);
+          window.sessionStorage.setItem('roles', roles);
+          window.sessionStorage.setItem('jwt', data.token);
           window.sessionStorage.setItem('fullName', user.fullName);
         })
         .catch(e => {
           throw new Error(e);
         });
     },
-    [setJWT, setFullName],
+    [setJWT, setFullName, setRoles],
   );
 
   const logout = useCallback(() => {

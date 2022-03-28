@@ -13,11 +13,11 @@ export const DashboardAdmin = () => {
     if (!isLogged) navigate('/');
   }, [isLogged, navigate]);
   return (
-    <Row className="w-100 m-0">
-      <Col lg={2} className="p-0">
+    <Row>
+      <Col lg={2}>
         <Sidebar />
       </Col>
-      <Col className="p-0">
+      <Col lg={10}>
         <Header />
         <Container>
           <Outlet />

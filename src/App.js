@@ -29,6 +29,23 @@ function App() {
           <Route path="recover-password" element={<RecoverPassword />} />
           <Route path="shop" element={<Shop />} />
         </Route>
+        {/* Admin */}
+        <Route path="dashboard" element={<DashboardAdmin />}>
+          <Route path="dashboard" element={<Resume />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="students" element={<Students />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="configs" element={<Configs />} />
+        </Route>
+        {/* Instructor */}
+        <Route path="dashboard" element={<DashboardAdmin />}>
+          <Route path="dashboard" element={<Resume />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="students" element={<Students />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="configs" element={<Configs />} />
+        </Route>
+        {/* Student */}
         <Route path="dashboard" element={<DashboardAdmin />}>
           <Route path="dashboard" element={<Resume />} />
           <Route path="courses" element={<Courses />} />

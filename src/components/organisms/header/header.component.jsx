@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <Navbar className={styles.navbar}>
+    <Navbar bg="dark" variant="dark" className={styles.navbar}>
       <Container>
         <Link to="/">
           <Nav.Link href="/">Website</Nav.Link>

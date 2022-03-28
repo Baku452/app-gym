@@ -11,7 +11,7 @@ const axiosApiInstance = axios.create({
 axiosApiInstance.interceptors.request.use(
   function (config) {
     config.headers = {
-      Authorization: `Bearer ${localStorage.getItem('api_token')}`,
+      Authorization: `Bearer ${sessionStorage.getItem('jwt')}`,
       Accept: 'application/json',
     };
     return config;
