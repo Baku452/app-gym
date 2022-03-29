@@ -8,8 +8,19 @@ export function UserContextProvider({ children }) {
     window.sessionStorage.getItem('fullName'),
   );
   const [roles, setRoles] = useState(() => window.sessionStorage.getItem('roles'));
+  const [loading, setLoading] = useState(false);
   return (
-    <Context.Provider value={{ jwt, fullName, roles, setJWT, setFullName, setRoles }}>
+    <Context.Provider
+      value={{
+        jwt,
+        fullName,
+        roles,
+        loading,
+        setJWT,
+        setFullName,
+        setRoles,
+        setLoading,
+      }}>
       {children}
     </Context.Provider>
   );

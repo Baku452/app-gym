@@ -18,8 +18,7 @@ export default function useUser() {
           setRoles(window.sessionStorage.setItem('roles', roles).split(','));
         })
         .catch(e => {
-          console.log(e);
-          // throw new Error(e);
+          throw new Error(e);
         });
     },
     [setJWT, setFullName, setRoles],

@@ -13,16 +13,20 @@ export const DashboardAdmin = () => {
     if (!isLogged) navigate('/');
   }, [isLogged, navigate]);
   return (
-    <Row className="w-100 m-0">
-      <Col lg={2} className="p-0">
-        <Sidebar />
-      </Col>
-      <Col className="p-0">
-        <Header />
-        <Container>
-          <Outlet />
-        </Container>
-      </Col>
-    </Row>
+    <>
+      {isLogged ? (
+        <Row className="w-100 m-0">
+          <Col lg={2} className="p-0">
+            <Sidebar />
+          </Col>
+          <Col className="p-0">
+            <Header />
+            <Container>
+              <Outlet />
+            </Container>
+          </Col>
+        </Row>
+      ) : null}
+    </>
   );
 };

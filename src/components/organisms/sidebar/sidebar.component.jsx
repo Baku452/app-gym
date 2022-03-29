@@ -1,15 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styles from './sidebar.module.scss';
-import Context from 'context/UserContext';
 import { asideAdmin, asideInstructor, asideUser } from 'data/navigation/navAdmin';
 
 // Images
 
 const Sidebar = () => {
-  const { roles } = useContext(Context);
   const [itemsAside, setItemsAside] = useState(asideUser);
+
+  const roles = window.sessionStorage.getItem('roles').split(',');
 
   useEffect(() => {
     if (roles.includes('admin')) setItemsAside(asideAdmin);
