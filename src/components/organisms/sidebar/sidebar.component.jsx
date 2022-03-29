@@ -11,6 +11,7 @@ const Sidebar = () => {
   const { roles } = useContext(Context);
   const [itemsAside, setItemsAside] = useState(asideUser);
 
+  console.log(roles);
   useEffect(() => {
     if (roles.includes('admin')) setItemsAside(asideAdmin);
     if (roles.includes('instructor')) setItemsAside(asideInstructor);

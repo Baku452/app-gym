@@ -10,8 +10,8 @@ export default function useUser() {
       loginService({ username, password })
         .then(data => {
           const { user, roles } = data;
-
-          window.sessionStorage.setItem('roles', roles).split(',');
+          console.log(data);
+          window.sessionStorage.setItem('roles', roles);
           window.sessionStorage.setItem('jwt', data.token);
           window.sessionStorage.setItem('fullName', user.fullName);
           setJWT(data.token);
@@ -19,10 +19,11 @@ export default function useUser() {
           setRoles(window.sessionStorage.setItem('roles', roles).split(','));
         })
         .catch(e => {
-          throw new Error(e);
+          console.log(e);
+          // throw new Error(e);
         });
     },
-    [setJWT, setFullName, setRoles],
+    [setJWT, setFullName, roles],
   );
 
   const logout = useCallback(() => {
