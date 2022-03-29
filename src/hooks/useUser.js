@@ -10,7 +10,6 @@ export default function useUser() {
       loginService({ username, password })
         .then(data => {
           const { user, roles } = data;
-          console.log(data);
           window.sessionStorage.setItem('roles', roles);
           window.sessionStorage.setItem('jwt', data.token);
           window.sessionStorage.setItem('fullName', user.fullName);
@@ -23,7 +22,7 @@ export default function useUser() {
           // throw new Error(e);
         });
     },
-    [setJWT, setFullName, roles],
+    [setJWT, setFullName, setRoles],
   );
 
   const logout = useCallback(() => {
