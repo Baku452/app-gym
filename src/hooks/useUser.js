@@ -11,18 +11,18 @@ export default function useUser() {
         .then(data => {
           const { user, roles } = data;
 
-          setJWT(data.token);
-          setFullName(user.fullName);
-          // setRoles(roles);
-          window.sessionStorage.setItem('roles', roles);
+          window.sessionStorage.setItem('roles', roles).split(',');
           window.sessionStorage.setItem('jwt', data.token);
           window.sessionStorage.setItem('fullName', user.fullName);
+          setJWT(data.token);
+          setFullName(user.fullName);
+          setRoles(window.sessionStorage.setItem('roles', roles).split(','));
         })
         .catch(e => {
           throw new Error(e);
         });
     },
-    [setJWT, setFullName],
+    [setJWT, setFullName, setRoles],
   );
 
   const logout = useCallback(() => {
