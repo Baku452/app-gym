@@ -29,6 +29,7 @@ function App() {
           <Route path="recover-password" element={<RecoverPassword />} />
           <Route path="shop" element={<Shop />} />
         </Route>
+        {/* Admin */}
         <Route path="dashboard" element={<DashboardAdmin />}>
           <Route path="dashboard" element={<Resume />} />
           <Route path="courses" element={<Courses />} />
@@ -36,6 +37,9 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="configs" element={<Configs />} />
         </Route>
+        {/* Instructor */}
+
+        {/* Student */}
       </Routes>
     </UserContextProvider>
   );

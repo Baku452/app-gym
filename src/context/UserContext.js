@@ -7,8 +7,20 @@ export function UserContextProvider({ children }) {
   const [fullName, setFullName] = useState(() =>
     window.sessionStorage.getItem('fullName'),
   );
+  const [roles, setRoles] = useState(() => window.sessionStorage.getItem('roles'));
+  const [loading, setLoading] = useState(false);
   return (
-    <Context.Provider value={{ jwt, fullName, setJWT, setFullName }}>
+    <Context.Provider
+      value={{
+        jwt,
+        fullName,
+        roles,
+        loading,
+        setJWT,
+        setFullName,
+        setRoles,
+        setLoading,
+      }}>
       {children}
     </Context.Provider>
   );
