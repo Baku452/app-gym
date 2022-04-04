@@ -15,9 +15,10 @@ export default function useUser() {
           window.sessionStorage.setItem('fullName', user.fullName);
           setJWT(data.token);
           setFullName(user.fullName);
-          setRoles(window.sessionStorage.setItem('roles', roles).split(','));
+          setRoles(roles);
         })
         .catch(e => {
+          console.log(e);
           throw new Error(e);
         });
     },
