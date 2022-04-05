@@ -17,8 +17,8 @@ const WebHome = () => {
       <div className={styles.containerHome}>
         <Container>
           <Row>
-            {services.map(item => (
-              <CardHome item={item} />
+            {services.map((item, index) => (
+              <CardHome key={index} item={item} />
             ))}
           </Row>
         </Container>
@@ -46,8 +46,8 @@ const WebHome = () => {
           <ShapeDividerTop />
           <Row className="p-5">
             <h2 className="pb-5">Membership</h2>
-            {membership.map(item => (
-              <MembershipCard item={item} />
+            {membership.map((item, index) => (
+              <MembershipCard key={index} item={item} />
             ))}
           </Row>
         </Container>
@@ -70,8 +70,8 @@ const WebHome = () => {
             </Col>
             <Col md={12} lg={8}>
               <Row>
-                {postsBlog.map(item => (
-                  <BlogCardHome item={item} />
+                {postsBlog.map((item, index) => (
+                  <BlogCardHome key={index} item={item} />
                 ))}
               </Row>
             </Col>

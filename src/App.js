@@ -16,6 +16,7 @@ import {
   Students,
   Blogs,
   Configs,
+  NewBlog,
 } from './pages';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="courses" element={<Courses />} />
           <Route path="students" element={<Students />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="blogs/new" element={<NewBlog />} />
           <Route path="configs" element={<Configs />} />
         </Route>
         {/* Instructor */}

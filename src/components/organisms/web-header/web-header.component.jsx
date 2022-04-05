@@ -10,7 +10,7 @@ const WebHeader = () => {
     <Navbar sticky="top" bg="dark" expand="lg" className={styles.header}>
       <Container className="justify-content-between">
         <div>
-          <Navbar.Brand href="/">
+          <Navbar.Brand>
             <Link to="/">
               <img alt="logo" src="icons/LogoTrackG.png"></img>
             </Link>
@@ -20,11 +20,9 @@ const WebHeader = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto ">
-              <Link to="/">
-                <Nav.Link className={styles.header__link} href="#home">
-                  Home
-                </Nav.Link>
-              </Link>
+              <Nav.Link to="/" className={styles.header__link}>
+                Home
+              </Nav.Link>
               {/* <Nav.Link className={styles.header__link} href="#link">
                 About Us
               </Nav.Link>
@@ -34,11 +32,9 @@ const WebHeader = () => {
               <Nav.Link className={styles.header__link} href="#link">
                 Blog
               </Nav.Link> */}
-              <Link to="/shop">
-                <Nav.Link className={styles.header__link} href="#link">
-                  Shop
-                </Nav.Link>
-              </Link>
+              <Nav.Link to="/shop" className={styles.header__link}>
+                Shop
+              </Nav.Link>
               <Link to="/login">
                 <Button className="me-4">Enter to gym</Button>
               </Link>

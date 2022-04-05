@@ -7,13 +7,13 @@ import { asideAdmin, asideInstructor, asideUser } from 'data/navigation/navAdmin
 // Images
 
 const Sidebar = () => {
-  const [itemsAside, setItemsAside] = useState(asideUser);
+  const [itemsAside, setItemsAside] = useState(asideAdmin);
 
-  const roles = window.sessionStorage.getItem('roles').split(',');
+  const roles = window.sessionStorage.getItem('roles')?.split(',');
 
   useEffect(() => {
-    if (roles.includes('admin')) setItemsAside(asideAdmin);
-    if (roles.includes('instructor')) setItemsAside(asideInstructor);
+    // if (roles.includes('admin')) setItemsAside(asideAdmin);
+    // if (roles.includes('instructor')) setItemsAside(asideInstructor);
   }, [roles]);
   return (
     <aside className={styles.aside}>

@@ -34,11 +34,15 @@ const Edit = ({ value, setValue }) => {
     'video',
   ];
 
+	const setValueEditor = (textoEditor) => {
+		setValue(textoEditor);
+	};
+
   return (
     <ReactQuill
       theme="snow"
       value={value}
-      onChange={setValue}
+      onChange={setValueEditor}
       modules={modules}
       formats={formats}
     />

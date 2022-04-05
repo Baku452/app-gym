@@ -9,16 +9,20 @@ import Col from '../../../node_modules/react-bootstrap/esm/Col';
 import Repository from '../../repositories/factory/RepositoryFactory';
 import Form from '../../../node_modules/react-bootstrap/esm/Form';
 import Edit from '../../components/atoms/edit/edit.component';
+import { Link, useNavigate } from 'react-router-dom';
 
 const BusinessObjectRepository = Repository.get('businessObject');
 
 const Blogs = () => {
+  const navigate = useNavigate();
   // Modal
   const [show, setShow] = useState(false);
   const hiddenBlogFormModal = () => setShow(false);
+
   const showBlogFormModal = () => {
-    setShow(true);
+    // setShow(true);
     setBlog(prepareBlog());
+    navigate('/dashboard/blogs/new');
   };
 
   const prepareBlog = () => {
@@ -104,15 +108,14 @@ const Blogs = () => {
           </Col>
         </Row>
         <div className={styles.principal__body__blogs}>
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
+          {blogs.map((item, index) => (
+            <CardBlog
+              key={index}
+              name={item.name}
+              description={item.description}
+              urlImage={item.url_image}
+            />
+          ))}
         </div>
       </div>
       <div className={styles.principal__blogs_best}>

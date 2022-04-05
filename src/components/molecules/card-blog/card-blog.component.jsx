@@ -3,14 +3,12 @@ import styles from './card-blog.module.scss';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import { Button } from 'react-bootstrap';
 
-const CardBlog = () => {
+const CardBlog = ({ name, description, slug, urlImage }) => {
   return (
     <div className={styles.blog}>
       <div className={styles.blog__description}>
-        <span className={styles.title}>Uso de Barra Superior</span>
-        <span className={styles.comments}>
-          Tips y técnicas adecuadas para el entrenamiento con barra superior.
-        </span>
+        <span className={styles.title}>{ name }</span>
+        <span className={styles.comments}>{ description }</span>
         <div className={styles.action}>
           <span className={styles.starts}>
             <BsStarFill fill="#ff8906" />
@@ -27,8 +25,8 @@ const CardBlog = () => {
       <div className={styles.blog__preview}>
         <img
           className={styles.blog__image}
-          src="https://picsum.photos/278/156"
-          alt="course gym"
+          src={ urlImage }
+          alt="image gym"
         />
       </div>
     </div>
