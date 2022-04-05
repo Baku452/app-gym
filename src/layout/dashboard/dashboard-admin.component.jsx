@@ -8,11 +8,10 @@ import useUser from 'hooks/useUser';
 
 export const DashboardAdmin = () => {
   const navigate = useNavigate();
-  let { isLogged } = useUser();
+  const { isLogged } = useUser();
   useEffect(() => {
-    // if (!isLogged) navigate('/');
+    if (!isLogged) navigate('/');
   }, [isLogged, navigate]);
-  isLogged = true;
   return (
     <>
       {isLogged ? (
