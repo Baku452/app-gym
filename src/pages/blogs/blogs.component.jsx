@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import styles from './blogs.module.scss';
 import { CardBlog } from 'components/molecules';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Image } from 'react-bootstrap';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import Row from '../../../node_modules/react-bootstrap/esm/Row';
 import Col from '../../../node_modules/react-bootstrap/esm/Col';
@@ -11,9 +10,12 @@ import Form from '../../../node_modules/react-bootstrap/esm/Form';
 import Edit from '../../components/atoms/edit/edit.component';
 import { Link, useNavigate } from 'react-router-dom';
 
+import styles from './blogs.module.scss';
+
 const BusinessObjectRepository = Repository.get('businessObject');
 
 const Blogs = () => {
+  const search = '../../assets/icons/instructor/search.svg';
   const navigate = useNavigate();
   // Modal
   const [show, setShow] = useState(false);
@@ -100,6 +102,14 @@ const Blogs = () => {
         <Row className="mb-2">
           <Col md={10}>
             <h2 className={styles.title}>Blogs publicados</h2>
+            <div className={styles.search}>
+              <input
+                className={styles.search__input}
+                type="text"
+                placeholder="Buscar en TrackG"
+              />
+              <Image style={{ width: '15px' }} src={search} alt="search in TrackG" />
+            </div>
           </Col>
           <Col md={2}>
             <Button onClick={showBlogFormModal} variant="outline-orange" size="sm">

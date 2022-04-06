@@ -13,7 +13,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (roles.includes('admin')) setItemsAside(asideAdmin);
-    if (roles.includes('instructor')) setItemsAside(asideInstructor);
+    if (roles.includes('trainer')) setItemsAside(asideInstructor);
   }, [roles]);
   return (
     <aside className={styles.aside}>
