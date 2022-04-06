@@ -8,6 +8,7 @@ export function UserContextProvider({ children }) {
     window.sessionStorage.getItem('fullName'),
   );
   const [roles, setRoles] = useState(() => window.sessionStorage.getItem('roles'));
+  console.log(roles);
   const [loading, setLoading] = useState(false);
   return (
     <Context.Provider
