@@ -126,3 +126,23 @@
 
 }
 
+.search {
+  width: 228px;
+  height: 30px;
+  border: 1px solid $orange;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+
+  &__input {
+    width: 200px;
+    font-size: 12px;
+    border: none;
+    background: transparent;
+    padding-left: 10px;
+    padding-top: 2px;
+    outline: none;
+    font-weight: bold;
+    color: $gray_base;
+  }
+}

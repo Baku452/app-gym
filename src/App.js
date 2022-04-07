@@ -16,7 +16,11 @@ import {
   Students,
   Blogs,
   Configs,
+<<<<<<< HEAD
   Products,
+=======
+  NewBlog,
+>>>>>>> a406f9c9f3b663b90f3c15624b23256de840ecb1
 } from './pages';
 
 function App() {
@@ -32,11 +36,15 @@ function App() {
         </Route>
         {/* Admin */}
         <Route path="dashboard" element={<DashboardAdmin />}>
-          <Route path="dashboard" element={<Resume />} />
+          <Route path="/dashboard" element={<Resume />} />
           <Route path="courses" element={<Courses />} />
           <Route path="students" element={<Students />} />
           <Route path="blogs" element={<Blogs />} />
+<<<<<<< HEAD
           <Route path="products" element={<Products />} />
+=======
+          <Route path="blogs/new" element={<NewBlog />} />
+>>>>>>> a406f9c9f3b663b90f3c15624b23256de840ecb1
           <Route path="configs" element={<Configs />} />
         </Route>
         {/* Instructor */}

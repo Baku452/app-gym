@@ -9,11 +9,11 @@ import { asideAdmin, asideInstructor, asideUser } from 'data/navigation/navAdmin
 const Sidebar = () => {
   const [itemsAside, setItemsAside] = useState(asideUser);
 
-  const roles = window.sessionStorage.getItem('roles').split(',');
+  const roles = window.sessionStorage.getItem('roles')?.split(',');
 
   useEffect(() => {
     if (roles.includes('admin')) setItemsAside(asideAdmin);
-    if (roles.includes('instructor')) setItemsAside(asideInstructor);
+    if (roles.includes('trainer')) setItemsAside(asideInstructor);
   }, [roles]);
   return (
     <aside className={styles.aside}>
