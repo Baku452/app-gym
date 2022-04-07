@@ -8,6 +8,7 @@ import Login from './login/index';
 import SignUp from './sign-up/signUp';
 import RecoverPassword from './recover-password/recoverPassword';
 import Shop from './shop/shop';
+import Products from './products/products.component';
 
 export {
   WebHome,
@@ -20,4 +21,5 @@ export {
   Configs,
   Resume,
   Students,
+  Products,
 };

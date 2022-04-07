@@ -1,0 +1,128 @@
+@import 'src/scss/style.scss';
+
+.principal {
+  display: flex;
+  background: $white;
+
+  &__body {
+    width:100%;
+    padding-right: 15px;
+    padding-top: 15px;
+
+    .title{
+      color: $gray_base;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .button {
+      border: 1px solid $orange;
+      border-radius: 5px;
+      padding: 5px;
+      color: $orange;
+    }
+
+    &__blogs {
+      display: grid;
+      height: auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 15px;
+    }
+
+  }
+
+  &__blogs_best {
+    width:100%;
+    background-color: $white;
+
+    .principal__improvement {
+      width: 100%;
+      background: $white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      
+      span {
+        font-weight: 700;
+        font-size: 15px;
+        color: $gray_base;
+      }
+    }
+
+  }
+
+}
+
+.blog {
+
+  &__preview {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    flex: 0 0 80px;
+    height: 40px;
+    margin-right: 10px;
+
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.9);
+    border-radius: 5px;
+  }
+
+}
+
+.blogs {
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: $white;
+}
+
+.blog {
+    display: flex;
+    align-items: center;
+    padding: 15px 15px 0 15px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    border-bottom: 1px solid #00000030;
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 13px;
+      width: 100%; 
+      font-size: 12px;
+
+      .blog__title {
+        font-weight: 700;
+        color: $gray_base;
+      }
+
+      .blog__instructor {
+        color: $orange;
+      }
+
+      .blog__date {
+        font-weight: 400;
+        color: $gray_base;
+        font-size: 11px;
+      }
+    }
+
+    &__date {
+      font-size: 10px;
+    }
+
+
+}
+
