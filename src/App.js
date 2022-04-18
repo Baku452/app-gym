@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Redirect } from 'react-router-dom';
 import { LayoutWeb } from 'layout/index';
 import { DashboardAdmin } from './layout/dashboard/dashboard-admin.component';
 import { UserContextProvider } from 'context/UserContext';
@@ -18,18 +18,22 @@ import {
   Configs,
   Products,
   NewBlog,
+  SlugBlog,
 } from './pages';
 
 function App() {
   return (
     <UserContextProvider>
       <Routes>
-        <Route path="/" element={<LayoutWeb />}>
+        <Route exact path="/" element={<LayoutWeb />}>
           <Route path="/" element={<WebHome />} />
           <Route path="login" element={<Login />} />
           <Route path="sign-up" element={<SignUp />} />
           <Route path="recover-password" element={<RecoverPassword />} />
           <Route path="shop" element={<Shop />} />
+          <Route path="blogs" element={<SlugBlog />} >
+            <Route path=":blogTitle" element={<SlugBlog />} />
+          </Route>
         </Route>
         {/* Admin */}
         <Route path="dashboard" element={<DashboardAdmin />}>

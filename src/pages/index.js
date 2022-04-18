@@ -1,5 +1,6 @@
 import Blogs from './blogs/blogs.component';
 import NewBlog from './blogs/new-blog/new-blog.component';
+import SlugBlog from './blogs/slug-blog/slug-blog.component';
 import Courses from './courses/courses.component';
 import Configs from './configs/configs.component';
 import Resume from './resume/resume.component';
@@ -19,6 +20,7 @@ export {
   Shop,
   Blogs,
   NewBlog,
+  SlugBlog,
   Courses,
   Configs,
   Resume,

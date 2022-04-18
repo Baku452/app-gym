@@ -56,7 +56,7 @@ const Blogs = () => {
     }));
   };
 
-  // blog
+  // blogs
   const [blogs, setBlogs] = useState([]);
 
   // localStorage.setItem('tours', JSON.stringify(dataTour));
@@ -123,6 +123,7 @@ const Blogs = () => {
               key={index}
               name={item.name}
               description={item.description}
+              slug={item.slug}
               urlImage={item.url_image}
             />
           ))}
