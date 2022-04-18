@@ -16,6 +16,12 @@
 
   }
 
+  &__button {
+    position: absolute;
+    top: -30px;
+    right: 30px;
+  }
+
   &__courses {
     display: grid;
     height: auto;

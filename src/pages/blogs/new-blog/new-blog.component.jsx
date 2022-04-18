@@ -53,6 +53,7 @@ const NewBlog = () => {
     try {
       const formData = new FormData();
       formData.append('singleFile', blog.imageFile);
+      formData.append('target', 'blog');
       const { data } = await UploadRepository.uploadFile(formData);
       //TODO: Validar si en caso responsenUpload falla
       const urlImage = data.secure_url;

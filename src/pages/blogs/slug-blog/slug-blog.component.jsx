@@ -9,7 +9,7 @@ const BusinessObjectRepository = Repository.get('businessObject');
 
 const SlugBlog = () => {
   let { blogTitle } = useParams();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   // blogs
   const [blog, setBlog] = useState({});
 

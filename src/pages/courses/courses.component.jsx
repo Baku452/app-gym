@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CardCourse } from 'components/molecules';
 import styles from './courses.module.scss';
 import { Button } from 'react-bootstrap';
@@ -6,31 +6,69 @@ import Tabs from '../../../node_modules/react-bootstrap/esm/Tabs';
 import { Tab } from 'bootstrap';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import Calendar from 'components/organisms/calendar/calendar.component';
+import { useNavigate } from '../../../node_modules/react-router/index';
 
+import Repository from '../../repositories/factory/RepositoryFactory';
 //images
 const playIcon = '../assets/icons/instructor/play.svg';
 
 const Courses = () => {
+  const BusinessObjectRepository = Repository.get('businessObject');
+  const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
+
+  const fetchCourses = async () => {
+    try {
+      const { data } = await BusinessObjectRepository.get({
+        business_object_type: 'course',
+      });
+      setCourses(data);
+    } catch (err) {
+      console.error('Error get blogs: ', err);
+    }
+  };
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
+
+  const showCourseForm = () => {
+    navigate('/dashboard/courses/new');
+  };
+
   return (
     <div className={styles.principal}>
       <div className="w-100">
         <Tabs defaultActiveKey="saved" id="uncontrolled-tab-example" className="mb-3">
-          <Tab className="custom-tab" eventKey="saved" title="Clases Grabadas">
+          <Tab className="custom-tab position-relative" eventKey="saved" title="Recorded Classes">
             <div className={styles.principal__body}>
-              <div className={styles.principal__courses}>
-                <CardCourse />
-                <CardCourse />
-                <CardCourse />
-                <CardCourse />
-                <CardCourse />
-                <CardCourse />
-                <CardCourse />
-                <CardCourse />
-                <CardCourse />
+              <div className='position-relative'>
+                <Button 
+                  onClick={showCourseForm} 
+                  variant="outline-orange" 
+                  className={styles.principal__button}
+                  size="sm">
+                  New Course
+                </Button>
+                <div className={styles.principal__courses}>
+                  {
+                    courses.map((item, index) => (
+                      <CardCourse
+                        key={index}
+                        name={item.name}
+                        description={item.description}
+                        slug={item.slug}
+                        urlImage={item.url_image}
+                        urlVideo={item.url_video}
+                       />
+                    ))
+                  }
+                </div>
               </div>
               <div className={styles.principal__courses_best}>
                 <div className={styles.principal__improvement}>
-                  <span>Mejores Clases</span>
+                  <span>Best Classes</span>
                   <Button
                     size="sm"
                     style={{ color: '#fff', cursor: 'pointer' }}
@@ -185,13 +223,16 @@ const Courses = () => {
               </div>
             </div>
           </Tab>
-          <Tab eventKey="direct" title="Clases Directo">
+          <Tab eventKey="direct" title="Direct Clases">
             <div>
               <div className={styles.principal__scheduler}>
                 <Calendar />
               </div>
             </div>
           </Tab>
+          <Button onClick={showCourseForm} variant="outline-orange" size="sm">
+            Subir Blog
+          </Button>
         </Tabs>
       </div>
     </div>

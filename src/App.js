@@ -18,6 +18,7 @@ import {
   Configs,
   Products,
   NewBlog,
+  NewCourse,
   SlugBlog,
 } from './pages';
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="dashboard" element={<DashboardAdmin />}>
           <Route path="/dashboard" element={<Resume />} />
           <Route path="courses" element={<Courses />} />
+          <Route path="courses/new" element={<NewCourse />} />
           <Route path="students" element={<Students />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs/new" element={<NewBlog />} />
