@@ -2,8 +2,11 @@ import React from 'react';
 import styles from './card-blog.module.scss';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from '../../../../node_modules/react-router/index';
 
 const CardBlog = ({ name, description, slug, urlImage }) => {
+  let navigate = useNavigate();
+
   return (
     <div className={styles.blog}>
       <div className={styles.blog__description}>
@@ -17,7 +20,11 @@ const CardBlog = ({ name, description, slug, urlImage }) => {
             <BsStar fill="#ff8906" />
             <BsStar fill="#ff8906" />
           </span>
-          <Button size="sm" style={{ color: '#fff', cursor: 'pointer' }} variant="orange">
+          <Button 
+            size="sm" 
+            style={{ color: '#fff', cursor: 'pointer' }} 
+            onClick={() => navigate(`/blogs/${slug}`)}
+            variant="orange">
             leer más
           </Button>
         </div>

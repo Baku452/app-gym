@@ -7,6 +7,7 @@ const api = {
   uploadFiles(payload) {
     return backend.post(`uploads/files`, payload);
   },
+
   // update(payload) {
   //   return backend.put(`users/${payload.id}`, payload);
   // },

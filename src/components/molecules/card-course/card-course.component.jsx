@@ -6,13 +6,13 @@ import styles from './card-course.module.scss';
 const playIcon = '../assets/icons/instructor/play.svg';
 
 // https://picsum.photos/278/156
-const CardCourse = () => {
+const CardCourse = ({ name, description, slug, urlImage, urlVideo}) => {
   return (
     <div className={styles.course}>
       <div className={styles.course__preview}>
         <img
           className={styles.course__image}
-          src="https://picsum.photos/278/156"
+          src={ urlImage }
           alt="course gym"
         />
         <div className={styles.course__play}>
@@ -20,10 +20,8 @@ const CardCourse = () => {
         </div>
       </div>
       <div className={styles.course__description}>
-        <span className={styles.title}>Uso de Barra Superior</span>
-        <span className={styles.comments}>
-          Tips y técnicas adecuadas para el entrenamiento con barra superior.
-        </span>
+        <span className={styles.title}>{ name }</span>
+        <span className={styles.comments}>{ description }</span>
         <span className={styles.starts}>
           <BsStarFill fill="#ff8906" />
           <BsStarFill fill="#ff8906" />
