@@ -1,8 +1,7 @@
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Edit from 'components/atoms/edit/edit.component';
-import React, { useEffect, useState } from 'react';
-import Form from '../../../../node_modules/react-bootstrap/esm/Form';
+import React, { useState } from 'react';
 import styles from './new-blog.module.scss';
 
 import Repository from '../../../repositories/factory/RepositoryFactory';
