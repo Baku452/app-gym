@@ -19,6 +19,7 @@ const NewCourse = () => {
     business_object_type: 'course',
     urlImage: '',
     urlVideo: '',
+    publicId: '',
   });
 
   const handleCourseChange = e => {
@@ -63,11 +64,10 @@ const NewCourse = () => {
       const { data: dataVideo } = await UploadRepository.uploadFile(formDataVideo);
       // const { data } = await UploadRepository.uploadFile(formDataVideo);
       //TODO: Validar si en caso responsenUpload falla
-      const urlImage = dataImage.secure_url;
-      const urlVideo = dataVideo.secure_url;
       const payload = CourseFormat(course);
-      payload.url_image = urlImage;
-      payload.url_video = urlVideo;
+      payload.url_image = dataImage.secure_url;
+      payload.url_video = dataVideo.secure_url;
+      payload.video_public_id = dataVideo.public_id;
 
       await BusinessObjectRepository.store(payload);
       navigate('/dashboard/Courses');
@@ -82,6 +82,7 @@ const NewCourse = () => {
     description,
     url_image,
     url_video,
+    video_public_id,
   }) => {
     return {
       name,
@@ -89,6 +90,7 @@ const NewCourse = () => {
       description,
       url_image,
       url_video,
+      video_public_id,
     };
   };
 

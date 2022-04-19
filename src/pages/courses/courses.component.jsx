@@ -61,6 +61,7 @@ const Courses = () => {
                         slug={item.slug}
                         urlImage={item.url_image}
                         urlVideo={item.url_video}
+                        videoPublicId={item.video_public_id}
                        />
                     ))
                   }

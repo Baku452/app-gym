@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import styles from './card-course.module.scss';
-
-//images
-const playIcon = '../assets/icons/instructor/play.svg';
+import { Modal } from 'react-bootstrap';
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedVideo } from '@cloudinary/react';
 
 // https://picsum.photos/278/156
-const CardCourse = ({ name, description, slug, urlImage, urlVideo}) => {
+const CardCourse = ({ name, description, urlImage, videoPublicId}) => {
+
+  //images
+  const playIcon = '../assets/icons/instructor/play.svg';
+
+  // Modal
+  const [modalShow, setModalShow] = useState(false);
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: `${process.env.REACT_APP_CLOUDINARY_NAME}`
+    }
+  });
+  const myVideo = cld.video(videoPublicId);
+
   return (
     <div className={styles.course}>
       <div className={styles.course__preview}>
@@ -16,7 +29,7 @@ const CardCourse = ({ name, description, slug, urlImage, urlVideo}) => {
           alt="course gym"
         />
         <div className={styles.course__play}>
-          <img src={playIcon} alt="course gym" />
+          <img onClick={() => setModalShow(true)} src={playIcon} alt="course gym" />
         </div>
       </div>
       <div className={styles.course__description}>
@@ -30,6 +43,16 @@ const CardCourse = ({ name, description, slug, urlImage, urlVideo}) => {
           <BsStar fill="#ff8906" />
         </span>
       </div>
+
+      <Modal
+        size="lg"
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <AdvancedVideo cldVid={myVideo} controls autoPlay={true} loop={true} />
+      </Modal>
     </div>
   );
 };
