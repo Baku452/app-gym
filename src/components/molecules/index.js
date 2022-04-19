@@ -8,5 +8,6 @@ export * from './card-blog-home';
 export * from './newsletterForm';
 export * from './form-login';
 export * from './form-register/formRegister';
+export * from './modalProduct/modalProduct';
 
 export { CardCourse, CardBlog, CardStudent };

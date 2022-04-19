@@ -32,7 +32,7 @@ function App() {
           <Route path="sign-up" element={<SignUp />} />
           <Route path="recover-password" element={<RecoverPassword />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="blogs" element={<SlugBlog />} >
+          <Route path="blogs" element={<SlugBlog />}>
             <Route path=":blogTitle" element={<SlugBlog />} />
           </Route>
         </Route>
