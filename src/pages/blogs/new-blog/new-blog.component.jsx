@@ -14,8 +14,6 @@ const NewBlog = () => {
   const { blogC, setBlogC } = useContext(FormContext);
 
   const navigate = useNavigate();
-  // localStorage.setItem('tours', JSON.stringify(dataTour));
-
   // Form
   const [blog, setBlog] = useState({
     name: '',
@@ -26,7 +24,7 @@ const NewBlog = () => {
   });
 
   useEffect(() => {
-    if ( Object.keys(blogC).length ) setBlog({ ...blogC });
+    if (Object.keys(blogC).length) setBlog({ ...blogC });
   }, []);
 
   const handleBlogChange = e => {
@@ -72,10 +70,9 @@ const NewBlog = () => {
       const payload = blogFormat(blog);
       if ( urlImage ) payload.url_image = urlImage;
       
-      console.log('data paylaod is: ', payload)
       if ("_id" in payload) await BusinessObjectRepository.update(payload);
       else await BusinessObjectRepository.store(payload);
-      
+
       setShowLoading(true);
       navigate('/dashboard/blogs');
     } catch (e) {

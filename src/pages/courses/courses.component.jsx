@@ -6,7 +6,7 @@ import Tabs from '../../../node_modules/react-bootstrap/esm/Tabs';
 import { Tab } from 'bootstrap';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import Calendar from 'components/organisms/calendar/calendar.component';
-import { useNavigate } from '../../../node_modules/react-router/index';
+import { useNavigate } from 'react-router-dom';
 
 import Repository from '../../repositories/factory/RepositoryFactory';
 //images
@@ -35,7 +35,6 @@ const Courses = () => {
     fetchCourses();
   }, []);
 
-
   const showCourseForm = () => {
     navigate('/dashboard/courses/new');
   };
@@ -44,7 +43,10 @@ const Courses = () => {
     <div className={styles.principal}>
       <div className="w-100">
         <Tabs defaultActiveKey="saved" id="uncontrolled-tab-example" className="mb-3">
-          <Tab className="custom-tab position-relative" eventKey="saved" title="Recorded Classes">
+          <Tab
+            className="custom-tab position-relative"
+            eventKey="saved"
+            title="Recorded Classes">
             <div className={styles.principal__body}>
               <div className='position-relative'>
                 { showLoading

@@ -26,7 +26,6 @@ import {
 } from './pages';
 
 function App() {
-
   return (
     <UserContextProvider>
       <FormContextProvider>
@@ -47,8 +46,8 @@ function App() {
             <Route path="courses" element={<Courses />} />
             <Route path="courses/new" element={<NewCourse />} />
             <Route path="students" element={<Students />} />
-              <Route path="blogs" element={<Blogs />} />
-              <Route path="blogs/new" element={<NewBlog />} />
+            <Route path="blogs" element={<Blogs />} />
+            <Route path="blogs/new" element={<NewBlog />} />
             <Route path="configs" element={<Configs />} />
             <Route path="products" element={<Products />} />
           </Route>
