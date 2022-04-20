@@ -1,8 +1,8 @@
-import { Button, Spinner } from 'react-bootstrap';
+import { Button, Spinner, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Edit from 'components/atoms/edit/edit.component';
 import React, { useEffect, useState, useContext } from 'react';
 import Form from '../../../../node_modules/react-bootstrap/esm/Form';
+import Edit from 'components/atoms/edit/edit.component';
 import styles from './new-blog.module.scss';
 
 import Repository from '../../../repositories/factory/RepositoryFactory';
