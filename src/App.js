@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Redirect } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { LayoutWeb } from 'layout/index';
 import { DashboardAdmin } from './layout/dashboard/dashboard-admin.component';
 import { UserContextProvider } from 'context/UserContext';

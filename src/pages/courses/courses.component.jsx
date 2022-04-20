@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { CardCourse } from 'components/molecules';
 import styles from './courses.module.scss';
-import { Button } from 'react-bootstrap';
-import Tabs from '../../../node_modules/react-bootstrap/esm/Tabs';
-import { Tab } from 'bootstrap';
+import { Button, Tabs, Tab } from 'react-bootstrap';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import Calendar from 'components/organisms/calendar/calendar.component';
-import { useNavigate } from '../../../node_modules/react-router/index';
+import { useNavigate } from 'react-router-dom';
 
 import Repository from '../../repositories/factory/RepositoryFactory';
 //images
@@ -32,7 +30,6 @@ const Courses = () => {
     fetchCourses();
   }, []);
 
-
   const showCourseForm = () => {
     navigate('/dashboard/courses/new');
   };
@@ -41,30 +38,31 @@ const Courses = () => {
     <div className={styles.principal}>
       <div className="w-100">
         <Tabs defaultActiveKey="saved" id="uncontrolled-tab-example" className="mb-3">
-          <Tab className="custom-tab position-relative" eventKey="saved" title="Recorded Classes">
+          <Tab
+            className="custom-tab position-relative"
+            eventKey="saved"
+            title="Recorded Classes">
             <div className={styles.principal__body}>
-              <div className='position-relative'>
-                <Button 
-                  onClick={showCourseForm} 
-                  variant="outline-orange" 
+              <div className="position-relative">
+                <Button
+                  onClick={showCourseForm}
+                  variant="outline-orange"
                   className={styles.principal__button}
                   size="sm">
                   New Course
                 </Button>
                 <div className={styles.principal__courses}>
-                  {
-                    courses.map((item, index) => (
-                      <CardCourse
-                        key={index}
-                        name={item.name}
-                        description={item.description}
-                        slug={item.slug}
-                        urlImage={item.url_image}
-                        urlVideo={item.url_video}
-                        videoPublicId={item.video_public_id}
-                       />
-                    ))
-                  }
+                  {courses.map((item, index) => (
+                    <CardCourse
+                      key={index}
+                      name={item.name}
+                      description={item.description}
+                      slug={item.slug}
+                      urlImage={item.url_image}
+                      urlVideo={item.url_video}
+                      videoPublicId={item.video_public_id}
+                    />
+                  ))}
                 </div>
               </div>
               <div className={styles.principal__courses_best}>

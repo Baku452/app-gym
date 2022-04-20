@@ -7,13 +7,6 @@ const api = {
   uploadFiles(payload) {
     return backend.post(`uploads/files`, payload);
   },
-
-  // update(payload) {
-  //   return backend.put(`users/${payload.id}`, payload);
-  // },
-  // delete(id) {
-  //   return backend.delete(`users/${id}`);
-  // },
 };
 
 export default api;

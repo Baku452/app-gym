@@ -10,8 +10,6 @@ const NewBlog = () => {
   const BusinessObjectRepository = Repository.get('businessObject');
 
   const navigate = useNavigate();
-  // localStorage.setItem('tours', JSON.stringify(dataTour));
-
   // Form
   const [blog, setBlog] = useState({
     name: '',
