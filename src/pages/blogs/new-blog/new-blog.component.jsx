@@ -1,7 +1,6 @@
 import { Button, Spinner, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState, useContext } from 'react';
-import Form from '../../../../node_modules/react-bootstrap/esm/Form';
 import Edit from 'components/atoms/edit/edit.component';
 import styles from './new-blog.module.scss';
 
@@ -25,9 +24,8 @@ const NewBlog = () => {
   });
 
   useEffect(() => {
-    if ( Object.keys(blogC).length ) setBlog({ ...blogC });
+    if (Object.keys(blogC).length) setBlog({ ...blogC });
   }, []);
-
 
   const handleBlogChange = e => {
     let updatedValue = {};
@@ -70,11 +68,11 @@ const NewBlog = () => {
       }
 
       const payload = blogFormat(blog);
-      if ( urlImage ) payload.url_image = urlImage;
-      
-      if ("_id" in payload) await BusinessObjectRepository.update(payload);
+      if (urlImage) payload.url_image = urlImage;
+
+      if ('_id' in payload) await BusinessObjectRepository.update(payload);
       else await BusinessObjectRepository.store(payload);
-      
+
       setShowLoading(true);
       navigate('/dashboard/blogs');
     } catch (e) {
@@ -155,20 +153,20 @@ const NewBlog = () => {
           style={{ color: '#fff', cursor: 'pointer', marginLeft: '10px' }}
           variant="orange"
           onClick={saveBlog}>
-            { showLoading 
-              ? 
-                <>
-                  <Spinner
-                    as="span"
-                    animation="grow"
-                    size="sm"
-                    role="status"
-                    aria-hidden="true"
-                  /> 
-                  Loading...
-                </>
-              : 'Guardar'
-            }
+          {showLoading ? (
+            <>
+              <Spinner
+                as="span"
+                animation="grow"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+              Loading...
+            </>
+          ) : (
+            'Guardar'
+          )}
         </Button>
       </div>
     </div>
