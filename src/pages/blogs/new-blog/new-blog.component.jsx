@@ -1,18 +1,17 @@
 import { Button, Spinner, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState, useContext } from 'react';
-import Form from '../../../../node_modules/react-bootstrap/esm/Form';
 import Edit from 'components/atoms/edit/edit.component';
 import styles from './new-blog.module.scss';
 
 import Repository from '../../../repositories/factory/RepositoryFactory';
-import BlogFormContext from 'context/BlogFormContext';
+import FormContext from 'context/FormContext';
 
 const NewBlog = () => {
   const [showLoading, setShowLoading] = useState(false);
   const UploadRepository = Repository.get('upload');
   const BusinessObjectRepository = Repository.get('businessObject');
-  const { blogC, setBlogC } = useContext(BlogFormContext);
+  const { blogC, setBlogC } = useContext(FormContext);
 
   const navigate = useNavigate();
   // localStorage.setItem('tours', JSON.stringify(dataTour));
@@ -29,7 +28,6 @@ const NewBlog = () => {
   useEffect(() => {
     if ( Object.keys(blogC).length ) setBlog({ ...blogC });
   }, []);
-
 
   const handleBlogChange = e => {
     let updatedValue = {};
@@ -74,6 +72,7 @@ const NewBlog = () => {
       const payload = blogFormat(blog);
       if ( urlImage ) payload.url_image = urlImage;
       
+      console.log('data paylaod is: ', payload)
       if ("_id" in payload) await BusinessObjectRepository.update(payload);
       else await BusinessObjectRepository.store(payload);
       
@@ -93,14 +92,16 @@ const NewBlog = () => {
     content,
     url_image,
   }) => {
-    return {
-      _id,
+    const payload = {
       name,
       business_object_type,
       description,
       url_image,
       content,
     };
+    if ( _id ) payload._id = _id;
+
+    return payload;
   };
 
   return (
@@ -150,7 +151,7 @@ const NewBlog = () => {
           onClick={e => {
             navigate('/dashboard/blogs');
           }}>
-          Cancelar
+          Cancel
         </Button>
 
         <Button
@@ -169,7 +170,7 @@ const NewBlog = () => {
                   /> 
                   Loading...
                 </>
-              : 'Guardar'
+              : 'Save'
             }
         </Button>
       </div>

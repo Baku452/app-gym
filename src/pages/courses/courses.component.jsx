@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CardCourse } from 'components/molecules';
 import styles from './courses.module.scss';
-import { Button } from 'react-bootstrap';
+import { Button, Alert, Spinner } from 'react-bootstrap';
 import Tabs from '../../../node_modules/react-bootstrap/esm/Tabs';
 import { Tab } from 'bootstrap';
 import { BsStar, BsStarFill } from 'react-icons/bs';
@@ -16,13 +16,16 @@ const Courses = () => {
   const BusinessObjectRepository = Repository.get('businessObject');
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
+  const [showLoading, setShowLoading] = useState(true);
 
   const fetchCourses = async () => {
+    setShowLoading(true)
     try {
       const { data } = await BusinessObjectRepository.get({
         business_object_type: 'course',
       });
       setCourses(data);
+      setShowLoading(false)
     } catch (err) {
       console.error('Error get blogs: ', err);
     }
@@ -44,28 +47,47 @@ const Courses = () => {
           <Tab className="custom-tab position-relative" eventKey="saved" title="Recorded Classes">
             <div className={styles.principal__body}>
               <div className='position-relative'>
-                <Button 
-                  onClick={showCourseForm} 
-                  variant="outline-orange" 
-                  className={styles.principal__button}
-                  size="sm">
-                  New Course
-                </Button>
-                <div className={styles.principal__courses}>
-                  {
-                    courses.map((item, index) => (
-                      <CardCourse
-                        key={index}
-                        name={item.name}
-                        description={item.description}
-                        slug={item.slug}
-                        urlImage={item.url_image}
-                        urlVideo={item.url_video}
-                        videoPublicId={item.video_public_id}
-                       />
-                    ))
+                { showLoading
+                  ?
+                    <div className='d-flex justify-content-center'><Spinner  animation="border" /></div>
+                  :
+                    <>
+                      <Button 
+                        onClick={showCourseForm} 
+                        variant="outline-orange" 
+                        className={styles.principal__button}
+                        size="sm">
+                        New Course
+                      </Button>
+
+                      {
+                        courses.length
+                        ?
+                          <>
+                            <div className={styles.principal__courses}>
+                              {
+                                courses.map((item, index) => (
+                                  <CardCourse
+                                    key={index}
+                                    name={item.name}
+                                    description={item.description}
+                                    slug={item.slug}
+                                    urlImage={item.url_image}
+                                    urlVideo={item.url_video}
+                                    videoPublicId={item.video_public_id}
+                                  />
+                                ))
+                              }
+                            </div>
+                          </>
+                        :
+                          <Alert variant="success">
+                            <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                            <p>Content will be uploaded soon</p>
+                          </Alert>
+                      }
+                    </>
                   }
-                </div>
               </div>
               <div className={styles.principal__courses_best}>
                 <div className={styles.principal__improvement}>
@@ -231,9 +253,6 @@ const Courses = () => {
               </div>
             </div>
           </Tab>
-          <Button onClick={showCourseForm} variant="outline-orange" size="sm">
-            Subir Blog
-          </Button>
         </Tabs>
       </div>
     </div>

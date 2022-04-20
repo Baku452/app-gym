@@ -3,14 +3,14 @@ import styles from './card-blog.module.scss';
 import { BsStar, BsStarFill, BsTrashFill, BsPencilFill } from 'react-icons/bs';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from '../../../../node_modules/react-router/index';
-import BlogFormContext from 'context/BlogFormContext';
+import FormContext from 'context/FormContext';
 
 import Repository from '../../../repositories/factory/RepositoryFactory';
 import Swal from 'sweetalert2';
 
 const CardBlog = ({ blog }) => {
   const navigate = useNavigate();
-  const { setBlogC } = useContext(BlogFormContext);
+  const { setBlogC } = useContext(FormContext);
   const BusinessObjectRepository = Repository.get('businessObject');
 
   const editBlogForm = (blog) => {

@@ -4,7 +4,7 @@ import { LayoutWeb } from 'layout/index';
 import { DashboardAdmin } from './layout/dashboard/dashboard-admin.component';
 
 import { UserContextProvider } from 'context/UserContext';
-import { BlogFormContextProvider } from 'context/BlogFormContext';
+import { FormContextProvider } from 'context/FormContext';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.scss';
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <UserContextProvider>
-      <BlogFormContextProvider>
+      <FormContextProvider>
         <Routes>
           <Route exact path="/" element={<LayoutWeb />}>
             <Route path="/" element={<WebHome />} />
@@ -56,7 +56,7 @@ function App() {
 
           {/* Student */}
         </Routes>
-      </BlogFormContextProvider>
+      </FormContextProvider>
     </UserContextProvider>
   );
 }

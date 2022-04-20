@@ -9,7 +9,7 @@ import Repository from '../../repositories/factory/RepositoryFactory';
 
 import styles from './blogs.module.scss';
 import { useNavigate } from '../../../node_modules/react-router-dom/index';
-import BlogFormContext from 'context/BlogFormContext';
+import FormContext from 'context/FormContext';
 
 
 const Blogs = () => {
@@ -18,7 +18,7 @@ const Blogs = () => {
   const search = '../../assets/icons/instructor/search.svg';
   const [blogs, setBlogs] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
-  const { setBlogC } = useContext(BlogFormContext);
+  const { setBlogC } = useContext(FormContext);
 
   // localStorage.setItem('tours', JSON.stringify(dataTour));
 
