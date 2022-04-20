@@ -1,14 +1,18 @@
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Edit from 'components/atoms/edit/edit.component';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Form from '../../../../node_modules/react-bootstrap/esm/Form';
 import styles from './new-blog.module.scss';
 
 import Repository from '../../../repositories/factory/RepositoryFactory';
+import BlogFormContext from 'context/BlogFormContext';
+
 const NewBlog = () => {
+  const [showLoading, setShowLoading] = useState(false);
   const UploadRepository = Repository.get('upload');
   const BusinessObjectRepository = Repository.get('businessObject');
+  const { blogC, setBlogC } = useContext(BlogFormContext);
 
   const navigate = useNavigate();
   // localStorage.setItem('tours', JSON.stringify(dataTour));
@@ -21,6 +25,11 @@ const NewBlog = () => {
     content: '',
     urlImage: '',
   });
+
+  useEffect(() => {
+    if ( Object.keys(blogC).length ) setBlog({ ...blogC });
+  }, []);
+
 
   const handleBlogChange = e => {
     let updatedValue = {};
@@ -49,25 +58,35 @@ const NewBlog = () => {
 
   const saveBlog = async function (e) {
     e.preventDefault();
-
+    setShowLoading(true);
     try {
       const formData = new FormData();
-      formData.append('singleFile', blog.imageFile);
-      formData.append('target', 'blog');
-      const { data } = await UploadRepository.uploadFile(formData);
-      //TODO: Validar si en caso responsenUpload falla
-      const urlImage = data.secure_url;
-      const payload = blogFormat(blog);
-      payload.url_image = urlImage;
+      let urlImage = '';
 
-      await BusinessObjectRepository.store(payload);
+      if (blog.imageFile) {
+        formData.append('singleFile', blog.imageFile);
+        formData.append('target', 'blog');
+        const { data } = await UploadRepository.uploadFile(formData);
+        //TODO: Validar si en caso responsenUpload falla
+        urlImage = data.secure_url;
+      }
+
+      const payload = blogFormat(blog);
+      if ( urlImage ) payload.url_image = urlImage;
+      
+      if ("_id" in payload) await BusinessObjectRepository.update(payload);
+      else await BusinessObjectRepository.store(payload);
+      
+      setShowLoading(true);
       navigate('/dashboard/blogs');
     } catch (e) {
       console.error(e);
+      setShowLoading(false);
     }
   };
 
   const blogFormat = ({
+    _id,
     name,
     business_object_type,
     description,
@@ -75,6 +94,7 @@ const NewBlog = () => {
     url_image,
   }) => {
     return {
+      _id,
       name,
       business_object_type,
       description,
@@ -137,7 +157,20 @@ const NewBlog = () => {
           style={{ color: '#fff', cursor: 'pointer', marginLeft: '10px' }}
           variant="orange"
           onClick={saveBlog}>
-          Guardar
+            { showLoading 
+              ? 
+                <>
+                  <Spinner
+                    as="span"
+                    animation="grow"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                  /> 
+                  Loading...
+                </>
+              : 'Guardar'
+            }
         </Button>
       </div>
     </div>

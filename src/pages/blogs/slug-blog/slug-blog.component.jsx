@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import styles from './slug-blog.module.scss';
 
@@ -8,13 +9,15 @@ import { useParams } from '../../../../node_modules/react-router/index';
 const BusinessObjectRepository = Repository.get('businessObject');
 
 const SlugBlog = () => {
-  let { blogTitle } = useParams();
+  const { blogTitle } = useParams();
+  const [showLoading, setShowLoading] = useState(true);
   const navigate = useNavigate();
   // blogs
   const [blog, setBlog] = useState({});
 
   const fetchBlog = async () => {
     if ( !blogTitle ) navigate('/');
+    setShowLoading(true);
     try {
       const { data } = await BusinessObjectRepository.get({
         business_object_type: 'blog',
@@ -22,6 +25,7 @@ const SlugBlog = () => {
       });
 
       if ( !data.length ) navigate('/dashboard/blogs'); 
+      setShowLoading(false);
       setBlog(data[0]);
 
     } catch (err) {
@@ -34,7 +38,14 @@ const SlugBlog = () => {
   }, []);
 
   return (
-    <div className='container' dangerouslySetInnerHTML={{ __html: blog.content }} />
+    <>
+    { showLoading
+      ?
+      <div className='d-flex justify-content-center'><Spinner  animation="border" /></div>
+      :
+      <div className='container' dangerouslySetInnerHTML={{ __html: blog.content }} />
+    }
+    </>
   );
 };
 

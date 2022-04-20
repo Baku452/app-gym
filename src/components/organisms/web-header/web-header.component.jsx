@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import { Button } from 'react-bootstrap';
 import styles from './web-header.module.scss';
 import { Link } from 'react-router-dom';
+import { LinkContainer } from '../../../../node_modules/react-router-bootstrap/index';
 
 const WebHeader = () => {
   return (
@@ -20,21 +21,27 @@ const WebHeader = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto ">
-              <Nav.Link to="/" className={styles.header__link}>
-                Home
-              </Nav.Link>
+              <LinkContainer to="/">
+                <Nav.Link className={styles.header__link}>
+                  Home
+                </Nav.Link>
+              </LinkContainer>
               {/* <Nav.Link className={styles.header__link} href="#link">
                 About Us
               </Nav.Link>
               <Nav.Link className={styles.header__link} href="#link">
                 Classes
-              </Nav.Link>
-              <Nav.Link className={styles.header__link} href="#link">
-                Blog
               </Nav.Link> */}
-              <Nav.Link to="/shop" className={styles.header__link}>
-                Shop
-              </Nav.Link>
+              <LinkContainer to="/dashboard/blogs" >
+                <Nav.Link className={styles.header__link}>
+                  Blog
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/shop">
+                <Nav.Link className={styles.header__link}>
+                  Shop
+                </Nav.Link>
+              </LinkContainer>
               <Link to="/login">
                 <Button className="me-4">Enter to gym</Button>
               </Link>

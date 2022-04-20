@@ -28,6 +28,7 @@ export default function useUser() {
   const logout = useCallback(() => {
     setJWT(null);
   }, [setJWT]);
+
   return {
     isLogged: Boolean(jwt),
     login,

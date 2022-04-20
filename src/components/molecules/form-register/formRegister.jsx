@@ -1,11 +1,18 @@
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { useState } from 'react';
+import { Form, Button, Row, Col, Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import registerService from 'services/register';
+import { useNavigate } from '../../../../node_modules/react-router/index';
 
 const FormRegister = () => {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const [showLoading, setShowLoading] = useState(false);
   const onSubmit = values => {
+    setShowLoading(true);
     registerService({ values });
+    setShowLoading(false);
+    navigate('/login');
   };
 
   return (
@@ -72,27 +79,30 @@ const FormRegister = () => {
           type="radio"
           inline
           label="Male"
+          key="radio1"
           value="male"
           name="gender"
-          id="gender"
+          id="gender1"
         />
         <Form.Check
           {...register('gender', { required: true })}
           type="radio"
           inline
           label="Female"
+          key="radio2"
           name="gender"
           value="female"
-          id="gender"
+          id="gender2"
         />
         <Form.Check
           {...register('gender', { required: true })}
           type="radio"
           inline
           label="Prefer not to say"
+          key="radio3"
           value="notsay"
           name="gender"
-          id="gender"
+          id="gender3"
         />
       </Form.Group>
       <div className="py-5">
@@ -100,7 +110,20 @@ const FormRegister = () => {
       </div>
       <div className="text-center">
         <Button className="mb-4 mx-auto px-5" variant="primary" type="submit">
-          Sign Up
+          { showLoading
+            ? 
+            <>
+              <Spinner
+                as="span"
+                animation="grow"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              /> 
+              Loading...
+            </>
+            : 'Sign Up'
+          }
         </Button>
       </div>
     </Form>
