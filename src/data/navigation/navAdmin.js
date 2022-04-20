@@ -16,8 +16,7 @@ const asideInstructor = [
   { id: 1, title: 'Dashboard', link: '/dashboard', icon: navHome },
   { id: 2, title: 'My Courses', link: '/dashboard/courses', icon: navClass },
   { id: 3, title: 'My Posts', link: '/dashboard/blogs', icon: navHome },
-  { id: 4, title: 'Account', link: '/dashboard', icon: navConfig },
-  { id: 5, title: 'Blog Posts', link: '/dashboard/blogs', icon: navBlogs },
+  // { id: 4, title: 'Account', link: '/dashboard', icon: navConfig },
 ];
 
 const asideUser = [
@@ -25,7 +24,7 @@ const asideUser = [
   { id: 2, title: 'Instructors', link: '/dashboard/instructors', icon: navHome },
   { id: 3, title: 'My Courses', link: '/dashboard', icon: navHome },
   { id: 4, title: 'Orders', link: '/dashboard', icon: navHome },
-  { id: 5, title: 'Account', link: '/dashboard', icon: navConfig },
+  // { id: 5, title: 'Account', link: '/dashboard', icon: navConfig },
 ];
 
 export { asideAdmin, asideInstructor, asideUser };

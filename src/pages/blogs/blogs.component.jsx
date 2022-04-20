@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { CardBlog } from 'components/molecules';
-import { Button, Image } from 'react-bootstrap';
+import { Button, Image, Spinner, Alert } from 'react-bootstrap';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import Row from '../../../node_modules/react-bootstrap/esm/Row';
 import Col from '../../../node_modules/react-bootstrap/esm/Col';
@@ -9,6 +9,7 @@ import Repository from '../../repositories/factory/RepositoryFactory';
 
 import styles from './blogs.module.scss';
 import { useNavigate } from '../../../node_modules/react-router-dom/index';
+import BlogFormContext from 'context/BlogFormContext';
 
 
 const Blogs = () => {
@@ -16,15 +17,19 @@ const Blogs = () => {
   const navigate = useNavigate();
   const search = '../../assets/icons/instructor/search.svg';
   const [blogs, setBlogs] = useState([]);
+  const [showLoading, setShowLoading] = useState(true);
+  const { setBlogC } = useContext(BlogFormContext);
 
   // localStorage.setItem('tours', JSON.stringify(dataTour));
 
   const fetchBlogs = async () => {
+    setShowLoading(true);
     try {
       const { data } = await BusinessObjectRepository.get({
         business_object_type: 'blog',
       });
       setBlogs(data);
+      setShowLoading(false);
     } catch (err) {
       console.error('Error get blogs: ', err);
     }
@@ -35,6 +40,7 @@ const Blogs = () => {
   }, []);
 
   const showBlogForm = () => {
+    setBlogC({});
     navigate('/dashboard/blogs/new');
   };
 
@@ -43,12 +49,12 @@ const Blogs = () => {
       <div className={styles.principal__body}>
         <Row className="mb-2">
           <Col md={10}>
-            <h2 className={styles.title}>Blogs publicados</h2>
+            <h2 className={styles.title}>Posted Blogs</h2>
             <div className={styles.search}>
               <input
                 className={styles.search__input}
                 type="text"
-                placeholder="Buscar en TrackG"
+                placeholder="Search in TrackG"
               />
               <Image style={{ width: '15px' }} src={search} alt="search in TrackG" />
             </div>
@@ -59,17 +65,28 @@ const Blogs = () => {
             </Button>
           </Col>
         </Row>
-        <div className={styles.principal__body__blogs}>
-          {blogs.map((item, index) => (
-            <CardBlog
-              key={index}
-              name={item.name}
-              description={item.description}
-              slug={item.slug}
-              urlImage={item.url_image}
-            />
-          ))}
-        </div>
+          { showLoading 
+            ? 
+              <div className='d-flex justify-content-center'><Spinner  animation="border" /></div>
+            : 
+              blogs.length 
+              ?
+              <div className={styles.principal__body__blogs}>
+                { 
+                  blogs.map((item, index) => (
+                    <CardBlog
+                      key={index}
+                      blog={item}
+                    />
+                  )) 
+                }
+              </div>
+              :
+              <Alert variant="success">
+                <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                <p>Content will be uploaded soon</p>
+              </Alert>
+          }
       </div>
       <div className={styles.principal__blogs_best}>
         <div className={styles.principal__improvement}>
