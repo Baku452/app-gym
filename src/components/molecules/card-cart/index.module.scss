@@ -1,0 +1,15 @@
+.image {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font-size: 1rem;
+}
+.button {
+  background-color: rgb(163, 64, 64);
+  &:hover {
+    background-color: rgb(163, 64, 64);
+  }
+}

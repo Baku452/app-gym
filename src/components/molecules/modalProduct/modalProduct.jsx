@@ -1,4 +1,4 @@
-import { Form, Modal, Button } from 'react-bootstrap';
+import { Form, Modal, Button, Row, Col } from 'react-bootstrap';
 
 import Repository from '../../../repositories/factory/RepositoryFactory';
 import { fetchProducts } from 'services/products';
@@ -50,9 +50,8 @@ const ModalProduct = ({ product, setProduct, show, setShow, isupdate, setProduct
         <Modal.Title>Create Product</Modal.Title>
       </Modal.Header>
       <Form onSubmit={handleSubmit}>
-        <Modal.Body>
-          <Form.Group controlId="formName">
-            <Form.Label>Name</Form.Label>
+        <Modal.Body className="px-5">
+          <Form.Group controlId="formContent" className="mt-4">
             <Form.Control
               name="name"
               type="text"
@@ -62,8 +61,7 @@ const ModalProduct = ({ product, setProduct, show, setShow, isupdate, setProduct
             />
           </Form.Group>
 
-          <Form.Group controlId="formDescription">
-            <Form.Label>Description</Form.Label>
+          <Form.Group controlId="formContent" className="mt-4">
             <Form.Control
               type="text"
               onChange={handleChange}
@@ -73,31 +71,36 @@ const ModalProduct = ({ product, setProduct, show, setShow, isupdate, setProduct
             />
           </Form.Group>
 
-          <Form.Group controlId="formImage">
-            <Form.Label>Image</Form.Label>
+          <Form.Group controlId="formImage" className="mt-4">
             <Form.Control type="file" placeholder="Image.jpg" name="image" />
           </Form.Group>
 
-          <Form.Group controlId="formContent">
-            <Form.Label>Price</Form.Label>
-            <Form.Control
-              type="number"
-              placeholder="Price"
-              onChange={handleChange}
-              value={product?.price}
-              name="price"
-            />
-          </Form.Group>
-          <Form.Group controlId="formContent">
-            <Form.Label>Quantity</Form.Label>
-            <Form.Control
-              type="number"
-              placeholder="Quantity"
-              onChange={handleChange}
-              value={product?.quantity}
-              name="quantity"
-            />
-          </Form.Group>
+          <Row>
+            <Col>
+              <Form.Group controlId="formContent" className="mt-4">
+                <Form.Control
+                  type="number"
+                  default={0.0}
+                  step=".01"
+                  placeholder="$/. Price"
+                  onChange={handleChange}
+                  value={product?.price}
+                  name="price"
+                />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group controlId="formContent" className="mt-4">
+                <Form.Control
+                  type="number"
+                  placeholder="Quantity"
+                  onChange={handleChange}
+                  value={product?.quantity}
+                  name="quantity"
+                />
+              </Form.Group>
+            </Col>
+          </Row>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
