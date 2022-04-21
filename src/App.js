@@ -2,9 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LayoutWeb } from 'layout/index';
 import { DashboardAdmin } from './layout/dashboard/dashboard-admin.component';
-import { loadStripe } from '@stripe/stripe-js';
 import { UserContextProvider } from 'context/UserContext';
-import { BlogFormContextProvider } from 'context/BlogFormContext';
 import { CartContextProvider } from 'context/CartContext';
 import { FormContextProvider } from 'context/FormContext';
 
@@ -33,7 +31,7 @@ import {
 function App() {
   return (
     <UserContextProvider>
-      <BlogFormContextProvider>
+      <FormContextProvider>
         <CartContextProvider>
           <Routes>
             <Route exact path="/" element={<LayoutWeb />}>
@@ -65,7 +63,7 @@ function App() {
             {/* Student */}
           </Routes>
         </CartContextProvider>
-      </BlogFormContextProvider>
+      </FormContextProvider>
     </UserContextProvider>
   );
 }
