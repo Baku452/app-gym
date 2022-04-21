@@ -22,7 +22,7 @@ const Sidebar = () => {
       <div className={styles.aside_logo}>
         <Navbar.Brand>
           <Link to="/">
-            <img alt="Logo Gym" src="icons/LogoTrackG.png" />
+            <img alt="Logo Gym" src="/icons/LogoTrackG.png" />
           </Link>
         </Navbar.Brand>
       </div>
