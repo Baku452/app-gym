@@ -79,9 +79,9 @@ const Products = () => {
               <>
                 <thead>
                   <tr>
-                    <th>#</th>
+                    <th>#ID</th>
                     <th>Name</th>
-                    <th>Category</th>
+                    {/* <th>Category</th> */}
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Action</th>
@@ -92,9 +92,9 @@ const Products = () => {
                     <tr>
                       <td>{item._id}</td>
                       <td>{item.name}</td>
-                      <td>{item.category}</td>
+                      {/* <td>{item.category}</td> */}
                       <td>{item.quantity}</td>
-                      <td>{item.price}</td>
+                      <td>$/. {item.price}</td>
                       <td>
                         Edit
                         <BsPencilFill

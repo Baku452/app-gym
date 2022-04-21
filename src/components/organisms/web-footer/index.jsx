@@ -8,7 +8,7 @@ const WebFooter = () => {
       <Container>
         <Row className="p-5">
           <Col lg={4}>
-            <img alt="logo" href="/" src="icons/LogoTrackG.png"></img>
+            <img alt="logo" href="/" src="/icons/LogoTrackG.png"></img>
           </Col>
           <Col>
             <h5>Shop</h5>

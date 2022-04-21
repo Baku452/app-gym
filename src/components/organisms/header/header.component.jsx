@@ -3,6 +3,7 @@ import { Container, Image, Navbar, Button, Nav } from 'react-bootstrap';
 import styles from './header.module.scss';
 import useUser from 'hooks/useUser';
 import Context from 'context/UserContext';
+import { Link } from 'react-router-dom';
 
 // const hamburguer = '../assets/icons/instructor/hamburguer.svg';
 // const search = '../assets/icons/instructor/search.svg';
@@ -19,8 +20,12 @@ const Header = () => {
   return (
     <Navbar bg="dark" variant="dark" className={styles.navbar}>
       <Container>
-        <Nav.Link to="/">Website</Nav.Link>
-        <Nav.Link to="/shop">Shop</Nav.Link>
+        <Nav.Link>
+          <Link to="/">Website</Link>
+        </Nav.Link>
+        <Nav.Link>
+          <Link to="/shop">Shop</Link>
+        </Nav.Link>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             <span>Role: { roles } | Signed in as : {fullName}</span>

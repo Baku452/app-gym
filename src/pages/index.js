@@ -12,6 +12,9 @@ import SignUp from './sign-up/signUp';
 import RecoverPassword from './recover-password/recoverPassword';
 import Shop from './shop/shop';
 import Products from './products/products.component';
+import Checkout from './checkout/confirmCheckout';
+import SucessCheckout from './checkout/sucessCheckout';
+import CancelCheckout from './checkout/cancelCheckout';
 
 export {
   WebHome,
@@ -28,4 +31,7 @@ export {
   Resume,
   Students,
   Products,
+  Checkout,
+  SucessCheckout,
+  CancelCheckout,
 };
