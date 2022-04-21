@@ -4,13 +4,9 @@ import { LayoutWeb } from 'layout/index';
 import { DashboardAdmin } from './layout/dashboard/dashboard-admin.component';
 import { loadStripe } from '@stripe/stripe-js';
 import { UserContextProvider } from 'context/UserContext';
-<<<<<<< HEAD
-import { BlogFormContextProvider } from 'context/BlogFormContext';
 import { CartContextProvider } from 'context/CartContext';
-=======
 import { FormContextProvider } from 'context/FormContext';
 
->>>>>>> 458aa0ff18daac510a0138318526824cb492a902
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.scss';
 import {
@@ -36,7 +32,7 @@ import {
 function App() {
   return (
     <UserContextProvider>
-      <BlogFormContextProvider>
+      <FormContextProvider>
         <CartContextProvider>
           <Routes>
             <Route exact path="/" element={<LayoutWeb />}>
@@ -68,7 +64,7 @@ function App() {
             {/* Student */}
           </Routes>
         </CartContextProvider>
-      </BlogFormContextProvider>
+      </FormContextProvider>
     </UserContextProvider>
   );
 }
