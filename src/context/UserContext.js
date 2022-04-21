@@ -4,6 +4,7 @@ const Context = createContext();
 
 export function UserContextProvider({ children }) {
   const [jwt, setJWT] = useState(() => window.sessionStorage.getItem('jwt'));
+  const [idUser, setIdUser] = useState(() => window.sessionStorage.getItem('idUser'));
   const [fullName, setFullName] = useState(() =>
     window.sessionStorage.getItem('fullName'),
   );
@@ -14,10 +15,12 @@ export function UserContextProvider({ children }) {
       value={{
         jwt,
         fullName,
+        idUser,
         roles,
         loading,
         setJWT,
         setFullName,
+        setIdUser,
         setRoles,
         setLoading,
       }}>

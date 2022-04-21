@@ -5,13 +5,13 @@ import Edit from 'components/atoms/edit/edit.component';
 import styles from './new-blog.module.scss';
 
 import Repository from '../../../repositories/factory/RepositoryFactory';
-import BlogFormContext from 'context/BlogFormContext';
+import FormContext from 'context/FormContext';
 
 const NewBlog = () => {
   const [showLoading, setShowLoading] = useState(false);
   const UploadRepository = Repository.get('upload');
   const BusinessObjectRepository = Repository.get('businessObject');
-  const { blogC, setBlogC } = useContext(BlogFormContext);
+  const { blogC, setBlogC } = useContext(FormContext);
 
   const navigate = useNavigate();
   // Form
@@ -68,9 +68,9 @@ const NewBlog = () => {
       }
 
       const payload = blogFormat(blog);
-      if (urlImage) payload.url_image = urlImage;
-
-      if ('_id' in payload) await BusinessObjectRepository.update(payload);
+      if ( urlImage ) payload.url_image = urlImage;
+      
+      if ("_id" in payload) await BusinessObjectRepository.update(payload);
       else await BusinessObjectRepository.store(payload);
 
       setShowLoading(true);
@@ -89,14 +89,16 @@ const NewBlog = () => {
     content,
     url_image,
   }) => {
-    return {
-      _id,
+    const payload = {
       name,
       business_object_type,
       description,
       url_image,
       content,
     };
+    if ( _id ) payload._id = _id;
+
+    return payload;
   };
 
   return (
@@ -146,27 +148,27 @@ const NewBlog = () => {
           onClick={e => {
             navigate('/dashboard/blogs');
           }}>
-          Cancelar
+          Cancel
         </Button>
 
         <Button
           style={{ color: '#fff', cursor: 'pointer', marginLeft: '10px' }}
           variant="orange"
           onClick={saveBlog}>
-          {showLoading ? (
-            <>
-              <Spinner
-                as="span"
-                animation="grow"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Loading...
-            </>
-          ) : (
-            'Guardar'
-          )}
+            { showLoading 
+              ? 
+                <>
+                  <Spinner
+                    as="span"
+                    animation="grow"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                  /> 
+                  Loading...
+                </>
+              : 'Save'
+            }
         </Button>
       </div>
     </div>

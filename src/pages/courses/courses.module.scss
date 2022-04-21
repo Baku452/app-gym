@@ -39,7 +39,7 @@
 
   &__courses_best {
     background-color: $white;
-    width: 283px;
+    width: 260px;
     position: absolute;
     right: 0;
     top: -35px;
@@ -59,7 +59,7 @@
       }
     }
 
-    .principal__courses {
+    &__content {
       display: block;
       width: 100%;
       height: auto;

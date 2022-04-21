@@ -1,13 +1,17 @@
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Form from '../../../../node_modules/react-bootstrap/esm/Form';
 import styles from './new-course.module.scss';
 
 import Repository from '../../../repositories/factory/RepositoryFactory';
+import FormContext from 'context/FormContext';
+
 const NewCourse = () => {
+  const [showLoading, setShowLoading] = useState(false);
   const UploadRepository = Repository.get('upload');
   const BusinessObjectRepository = Repository.get('businessObject');
+  const { courseC, setCourseC } = useContext(FormContext);
 
   const navigate = useNavigate();
   // localStorage.setItem('tours', JSON.stringify(dataTour));
@@ -21,6 +25,10 @@ const NewCourse = () => {
     urlVideo: '',
     publicId: '',
   });
+
+  useEffect(() => {
+    if ( Object.keys(courseC).length ) setCourse({ ...courseC });
+  }, []);
 
   const handleCourseChange = e => {
     let updatedValue = {};
@@ -51,32 +59,48 @@ const NewCourse = () => {
 
   const saveCourse = async function (e) {
     e.preventDefault();
+    setShowLoading(true);
 
     try {
       const formDataImage = new FormData();
       const formDataVideo = new FormData();
-      formDataImage.append('singleFile', course.imageFile);
-      formDataImage.append('target', 'course');
+      let urlImage = '';
+      let urlVideo = '';
+      let videoPublicId = '';
 
-      formDataVideo.append('singleFile', course.videoFile);
-      formDataVideo.append('target', 'course');
-      const { data: dataImage } = await UploadRepository.uploadFile(formDataImage);
-      const { data: dataVideo } = await UploadRepository.uploadFile(formDataVideo);
-      // const { data } = await UploadRepository.uploadFile(formDataVideo);
-      //TODO: Validar si en caso responsenUpload falla
+      if ( course.imageFile ) {
+        formDataImage.append('singleFile', course.imageFile);
+        formDataImage.append('target', 'course');
+        const { data: dataImage } = await UploadRepository.uploadFile(formDataImage);
+        urlImage = dataImage.secure_url;
+      }
+
+      if ( course.videoFile ) {
+        formDataVideo.append('singleFile', course.videoFile);
+        formDataVideo.append('target', 'course');
+        const { data: dataVideo } = await UploadRepository.uploadFile(formDataVideo);
+        urlVideo = dataVideo.secure_url;
+        videoPublicId = dataVideo.public_id;
+      }
+
       const payload = CourseFormat(course);
-      payload.url_image = dataImage.secure_url;
-      payload.url_video = dataVideo.secure_url;
-      payload.video_public_id = dataVideo.public_id;
+      if ( urlImage ) payload.url_image = urlImage;
+      if ( urlVideo ) {
+        payload.url_video = urlVideo;
+        payload.video_public_id = videoPublicId;
+      }
 
-      await BusinessObjectRepository.store(payload);
-      navigate('/dashboard/Courses');
+      if ("_id" in payload) await BusinessObjectRepository.update(payload);
+      else await BusinessObjectRepository.store(payload);
+
+      navigate('/dashboard/courses');
     } catch (e) {
       console.error(e);
     }
   };
 
   const CourseFormat = ({
+    _id,
     name,
     business_object_type,
     description,
@@ -84,7 +108,7 @@ const NewCourse = () => {
     url_video,
     video_public_id,
   }) => {
-    return {
+    const payload = {
       name,
       business_object_type,
       description,
@@ -92,6 +116,10 @@ const NewCourse = () => {
       url_video,
       video_public_id,
     };
+
+    if ( _id ) payload._id = _id;
+
+    return payload;
   };
 
   return (
@@ -149,7 +177,7 @@ const NewCourse = () => {
           variant="light"
           className="border"
           onClick={e => {
-            navigate('/dashboard/Courses');
+            navigate('/dashboard/courses');
           }}>
           Cancel
         </Button>
@@ -158,7 +186,20 @@ const NewCourse = () => {
           style={{ color: '#fff', cursor: 'pointer', marginLeft: '10px' }}
           variant="orange"
           onClick={saveCourse}>
-          Save
+            { showLoading 
+              ? 
+                <>
+                  <Spinner
+                    as="span"
+                    animation="grow"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                  /> 
+                  Loading...
+                </>
+              : 'Save'
+            }
         </Button>
       </div>
     </div>

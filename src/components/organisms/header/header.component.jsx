@@ -11,7 +11,7 @@ const instructor1 = '../assets/images/instructor/carla.jpg';
 
 const Header = () => {
   const { logout } = useUser();
-  const { fullName } = useContext(Context);
+  const { fullName, roles } = useContext(Context);
   const handleLogout = e => {
     e.preventDefault();
     logout();
@@ -28,7 +28,7 @@ const Header = () => {
         </Nav.Link>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            <span>Signed in as : {fullName}</span>
+            <span>Role: { roles } | Signed in as : {fullName}</span>
             <Image
               style={{ width: '30px', height: '30px' }}
               src={instructor1}
