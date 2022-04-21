@@ -10,6 +10,7 @@ const asideAdmin = [
   { id: 3, title: 'Students', link: '/dashboard/students', icon: navStudents },
   { id: 4, title: 'Products', link: '/dashboard/products', icon: navHome },
   { id: 5, title: 'Blog Posts', link: '/dashboard/blogs', icon: navBlogs },
+  { id: 6, title: 'Courses Posts', link: '/dashboard/courses', icon: navBlogs },
 ];
 
 const asideInstructor = [
@@ -21,9 +22,8 @@ const asideInstructor = [
 
 const asideUser = [
   { id: 1, title: 'Dashboard', link: '/dashboard', icon: navHome },
-  { id: 2, title: 'Instructors', link: '/dashboard/instructors', icon: navHome },
-  { id: 3, title: 'My Courses', link: '/dashboard', icon: navHome },
-  { id: 4, title: 'Orders', link: '/dashboard', icon: navHome },
+  { id: 2, title: 'Courses', link: '/dashboard/courses', icon: navClass },
+  { id: 3, title: 'Posts', link: '/dashboard/blogs', icon: navHome },
   // { id: 5, title: 'Account', link: '/dashboard', icon: navConfig },
 ];
 

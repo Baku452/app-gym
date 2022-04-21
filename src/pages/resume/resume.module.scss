@@ -26,10 +26,9 @@
       &__blogs {
         display: grid;
         height: 170px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
-        grid-gap: 1.5px;
-        margin: 15px;
+        grid-gap: 15px;
       }
 
     }

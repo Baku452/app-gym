@@ -108,7 +108,7 @@ const NewCourse = () => {
     url_video,
     video_public_id,
   }) => {
-    const paylaod = {
+    const payload = {
       name,
       business_object_type,
       description,
@@ -119,7 +119,7 @@ const NewCourse = () => {
 
     if ( _id ) payload._id = _id;
 
-    return paylaod;
+    return payload;
   };
 
   return (

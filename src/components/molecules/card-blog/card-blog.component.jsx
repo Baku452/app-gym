@@ -4,11 +4,10 @@ import { BsStar, BsStarFill, BsTrashFill, BsPencilFill } from 'react-icons/bs';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from '../../../../node_modules/react-router/index';
 import FormContext from 'context/FormContext';
-
 import Repository from '../../../repositories/factory/RepositoryFactory';
 import Swal from 'sweetalert2';
 
-const CardBlog = ({ blog }) => {
+const CardBlog = ({ blog, fetchBlogs, isEdit = false }) => {
   const navigate = useNavigate();
   const { setBlogC } = useContext(FormContext);
   const BusinessObjectRepository = Repository.get('businessObject');
@@ -28,10 +27,10 @@ const CardBlog = ({ blog }) => {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
     }).then( async (result) => {
-      console.log('resul is :',result, 'data blog: ', blog)
       if (result.isConfirmed) {
         await BusinessObjectRepository.delete(blog._id);
-        navigate('/dashboard/blogs');
+        fetchBlogs();
+        // navigate('/dashboard/blogs');
       }
     })
   }
@@ -43,11 +42,12 @@ const CardBlog = ({ blog }) => {
         <span className={styles.comments}>{ blog?.description }</span>
         <div className={styles.action}>
           <span className={styles.starts}>
-            <BsStarFill fill="#ff8906" />
-            <BsStarFill fill="#ff8906" />
-            <BsStarFill fill="#ff8906" />
-            <BsStar fill="#ff8906" />
-            <BsStar fill="#ff8906" />
+            {
+              [...Array(5)].map((x,i) => {
+                if ((i + 1) <= blog?.score) return ( <BsStarFill key={i+''} fill="#ff8906" /> )
+                return (<BsStar key={i+''} fill="#ff8906" />)
+              })
+            }
           </span>
           <Button 
             size="sm" 
@@ -65,8 +65,12 @@ const CardBlog = ({ blog }) => {
           alt="image gym"
         />
         <div className={styles.blog__control}>
-          <BsPencilFill onClick={() => editBlogForm(blog)} className={styles.cursorPointer+' mb-2'} fill="#ff8906" />
-          <BsTrashFill onClick={() => deleteBlogForm(blog)} className={styles.cursorPointer} fill="#ff8906" />
+          { isEdit && 
+            <>
+              <BsPencilFill onClick={() => editBlogForm(blog)} className={styles.cursorPointer+' mb-2'} fill="#ff8906" />
+              <BsTrashFill onClick={() => deleteBlogForm(blog)} className={styles.cursorPointer} fill="#ff8906" />
+            </>
+          }
         </div>
       </div>
     </div>

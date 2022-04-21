@@ -1,36 +1,130 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CardCourse, CardBlog } from 'components/molecules';
 import styles from './resume.module.scss';
-import { Button } from 'react-bootstrap';
+import { Button, Alert, Spinner } from 'react-bootstrap';
+import Repository from '../../repositories/factory/RepositoryFactory';
+import { useNavigate } from '../../../node_modules/react-router/index';
+import Context from 'context/UserContext';
 
 const Resume = () => {
+  const BusinessObjectRepository = Repository.get('businessObject');
+  const navigate = useNavigate();
+  const { roles, idUser } = useContext(Context);
+  const [courses, setCourses] = useState([]);
+  const [blogs, setBlogs] = useState([]);
+  const [showCoursesLoading, setShowCoursesLoading] = useState(true);
+  const [showBlogsLoading, setShowBlogsLoading] = useState(true);
+
+  const fetchCourses = async () => {
+    setShowCoursesLoading(true)
+    try {
+      const filter = { business_object_type: 'course', limit:3 };
+      if ( roles == 'instructor') filter.userData = { user: idUser };
+
+      const { data } = await BusinessObjectRepository.get( filter );
+      setCourses(data);
+      setShowCoursesLoading(false)
+    } catch (err) {
+      console.error('Error get blogs: ', err);
+    }
+  };
+
+  const fetchBlogs = async () => {
+    setShowBlogsLoading(true);
+    try {
+      const filter = { business_object_type: 'blog', limit:2 };
+      if ( roles == 'instructor') filter.userData = { user: idUser };
+
+      const { data } = await BusinessObjectRepository.get( filter );
+      setBlogs(data);
+      setShowBlogsLoading(false);
+    } catch (err) {
+      console.error('Error get blogs: ', err);
+    }
+  };
+
+
+  useEffect(() => {
+    fetchCourses();
+    fetchBlogs();
+  }, []);
+
+  const toCourses = () => {
+    navigate('/dashboard/courses');
+  };
+
+  const toBlogs = () => {
+    navigate('/dashboard/blogs');
+  };
+
   return (
     <div className={styles.principal}>
       <div className={styles.principal__body}>
-        <h2 className={styles.title}>Cursos publicados</h2>
-        <div className={styles.principal__body__courses}>
-          <CardCourse />
-          <CardCourse />
-          <CardCourse />
-        </div>
+        <h2 className={styles.title}>Courses posted</h2>
+        { showCoursesLoading
+          ?
+            <div className='d-flex justify-content-center'><Spinner  animation="border" /></div>
+          :
+            courses.length
+            ?
+              <>
+                <div className={styles.principal__body__courses}>
+                  {
+                    courses.map((item, index) => (
+                      <CardCourse
+                        key={index}
+                        course={item}
+                        fetchCourses={fetchCourses}
+                        isEdit={false}
+                      />
+                    ))
+                  }
+                </div>
+                <div className="text-center">
+                  <Button size="sm" onClick={ toBlogs } variant="outline-orange">
+                    See more
+                  </Button>
+                </div>
+              </>
+            :
+              <Alert variant="success">
+                <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                <p>Content will be uploaded soon</p>
+              </Alert>
+          }
+        <h2 className={styles.title}>Blogs posted</h2>
+          { showBlogsLoading 
+            ? 
+              <div className='d-flex justify-content-center'><Spinner  animation="border" /></div>
+            : 
+              blogs.length 
+              ?
+              <div className={styles.principal__body__blogs}>
+                { 
+                  blogs.map((item, index) => (
+                    <CardBlog
+                      key={index}
+                      blog={item}
+                      fetchBlogs={fetchBlogs}
+                      isEdit={false}
+                    />
+                  )) 
+                }
+              </div>
+              :
+              <Alert variant="success">
+                <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                <p>Content will be uploaded soon</p>
+              </Alert>
+          }
         <div className="text-center">
-          <Button size="sm" variant="outline-orange">
-            Ver más
-          </Button>
-        </div>
-        <h2 className={styles.title}>Blogs publicados</h2>
-        <div className={styles.principal__body__blogs}>
-          <CardBlog />
-          <CardBlog />
-        </div>
-        <div className="text-center">
-          <Button size="sm" variant="outline-orange">
-            Ver más
+          <Button onClick={ toBlogs } size="sm" variant="outline-orange">
+            See more
           </Button>
         </div>
       </div>
       <div className={styles.principal__profiles}>
-        <div className={styles.principal__instructor}>
+        {/* <div className={styles.principal__instructor}>
           <div className={styles.profile}>
             <div className={styles.profile__photo}>
               <img
@@ -81,12 +175,9 @@ const Resume = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className={styles.principal__improvement}>
-          <span>Mejores Instructores</span>
-          <Button size="sm" style={{ color: '#fff', cursor: 'pointer' }} variant="orange">
-            Ver todo
-          </Button>
+          <span>Best Instructors</span>
         </div>
         <div className={styles.principal__instructors}>
           <div className={styles.instructors}>
@@ -95,7 +186,7 @@ const Resume = () => {
                 <img src={'../assets/images/instructor/instructor1.jpg'} alt="" />
                 <div className={styles.instructor__description}>
                   <span>Pedro Gonzales</span>
-                  <span>Nutricionista</span>
+                  <span>Nutritionist</span>
                 </div>
               </div>
               <div className={styles.instructor__date}>
@@ -107,7 +198,7 @@ const Resume = () => {
                 <img src={'../assets/images/instructor/instructor2.jpg'} alt="" />
                 <div className={styles.instructor__description}>
                   <span>Juan Carma</span>
-                  <span>Praparador Fitness</span>
+                  <span>Fitness Trainer</span>
                 </div>
               </div>
               <div className={styles.instructor__date}>
@@ -118,8 +209,8 @@ const Resume = () => {
               <div className={styles.instructor__profile}>
                 <img src={'../assets/images/instructor/instructor3.jpg'} alt="" />
                 <div className={styles.instructor__description}>
-                  <span>Carlos Salas</span>
-                  <span>Suplementación</span>
+                  <span>Carla Salas</span>
+                  <span>Supplementation</span>
                 </div>
               </div>
               <div className={styles.instructor__date}>
@@ -130,8 +221,8 @@ const Resume = () => {
               <div className={styles.instructor__profile}>
                 <img src={'../assets/images/instructor/instructor4.jpg'} alt="" />
                 <div className={styles.instructor__description}>
-                  <span>Pedro Gonzales</span>
-                  <span>Nutricionista</span>
+                  <span>Mary Aguilar</span>
+                  <span>Nutritionist</span>
                 </div>
               </div>
               <div className={styles.instructor__date}>
@@ -142,8 +233,8 @@ const Resume = () => {
               <div className={styles.instructor__profile}>
                 <img src={'../assets/images/instructor/instructor5.jpg'} alt="" />
                 <div className={styles.instructor__description}>
-                  <span>Pedro Gonzales</span>
-                  <span>Nutricionista</span>
+                  <span>Juan Manrrique</span>
+                  <span>Nutritionist</span>
                 </div>
               </div>
               <div className={styles.instructor__date}>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CardCourse } from 'components/molecules';
 import styles from './courses.module.scss';
 import { Button, Alert, Spinner } from 'react-bootstrap';
@@ -9,6 +9,8 @@ import Calendar from 'components/organisms/calendar/calendar.component';
 import { useNavigate } from 'react-router-dom';
 
 import Repository from '../../repositories/factory/RepositoryFactory';
+import Context from 'context/UserContext';
+import FormContext from 'context/FormContext';
 //images
 const playIcon = '../assets/icons/instructor/play.svg';
 
@@ -17,13 +19,17 @@ const Courses = () => {
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
+  const { roles, idUser } = useContext(Context);
+  const { setCourseC } = useContext(FormContext);
+  const [isEdit, setIsEdit] = useState(false);
 
   const fetchCourses = async () => {
     setShowLoading(true)
     try {
-      const { data } = await BusinessObjectRepository.get({
-        business_object_type: 'course',
-      });
+      const filter = { business_object_type: 'course' };
+      if ( roles == 'instructor') filter.userData = { user: idUser };
+
+      const { data } = await BusinessObjectRepository.get( filter );
       setCourses(data);
       setShowLoading(false)
     } catch (err) {
@@ -33,9 +39,12 @@ const Courses = () => {
 
   useEffect(() => {
     fetchCourses();
+    if( roles == 'user') setIsEdit(false)
+    else setIsEdit(true)
   }, []);
 
   const showCourseForm = () => {
+    setCourseC({});
     navigate('/dashboard/courses/new');
   };
 
@@ -48,19 +57,21 @@ const Courses = () => {
             eventKey="saved"
             title="Recorded Classes">
             <div className={styles.principal__body}>
-              <div className='position-relative'>
+              <div className='position-relative w-75'>
                 { showLoading
                   ?
                     <div className='d-flex justify-content-center'><Spinner  animation="border" /></div>
                   :
                     <>
-                      <Button 
-                        onClick={showCourseForm} 
-                        variant="outline-orange" 
-                        className={styles.principal__button}
-                        size="sm">
-                        New Course
-                      </Button>
+                      { isEdit &&
+                        <Button 
+                          onClick={showCourseForm} 
+                          variant="outline-orange" 
+                          className={styles.principal__button}
+                          size="sm">
+                          New Course
+                        </Button>
+                      }
 
                       {
                         courses.length
@@ -71,12 +82,9 @@ const Courses = () => {
                                 courses.map((item, index) => (
                                   <CardCourse
                                     key={index}
-                                    name={item.name}
-                                    description={item.description}
-                                    slug={item.slug}
-                                    urlImage={item.url_image}
-                                    urlVideo={item.url_video}
-                                    videoPublicId={item.video_public_id}
+                                    course={item}
+                                    fetchCourses={fetchCourses}
+                                    isEdit={isEdit}
                                   />
                                 ))
                               }
@@ -94,14 +102,8 @@ const Courses = () => {
               <div className={styles.principal__courses_best}>
                 <div className={styles.principal__improvement}>
                   <span>Best Classes</span>
-                  <Button
-                    size="sm"
-                    style={{ color: '#fff', cursor: 'pointer' }}
-                    variant="orange">
-                    Ver todo
-                  </Button>
                 </div>
-                <div className={styles.principal__courses}>
+                <div className={styles.principal__courses_best__content}>
                   <div className={styles.courses}>
                     <div className={styles.course}>
                       <div className={styles.course__preview}>
@@ -116,18 +118,18 @@ const Courses = () => {
                       </div>
                       <div className={styles.course__description}>
                         <span className={styles.course__title}>
-                          Pectorales de Acero con pesas
+                          Donec velit neque, auctor sit amet
                         </span>
-                        <span className={styles.course__instructor}>
+                        {/* <span className={styles.course__instructor}>
                           Juan Quino Areche Isra
-                        </span>
-                        <span className={styles.course__date}>20 Diciembre 2021</span>
+                        </span> */}
+                        <span className={styles.course__date}>18 Enero 2022</span>
                         <span className={styles.starts}>
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />
-                          <BsStar fill="#ff8906" />
-                          <BsStar fill="#ff8906" />
+                          <BsStarFill fill="#ff8906" />
+                          <BsStarFill fill="#ff8906" />
                         </span>
                       </div>
                     </div>
@@ -135,7 +137,7 @@ const Courses = () => {
                       <div className={styles.course__preview}>
                         <img
                           className={styles.course__image}
-                          src="https://picsum.photos/278/156"
+                          src="https://picsum.photos/277/155"
                           alt="course gym"
                         />
                         <div className={styles.course__play}>
@@ -144,18 +146,18 @@ const Courses = () => {
                       </div>
                       <div className={styles.course__description}>
                         <span className={styles.course__title}>
-                          Pectorales de Acero con pesas
+                          Eget tincidunt nibh pulvinar a
                         </span>
-                        <span className={styles.course__instructor}>
+                        {/* <span className={styles.course__instructor}>
                           Juan Quino Areche Isra
-                        </span>
-                        <span className={styles.course__date}>20 Diciembre 2021</span>
+                        </span> */}
+                        <span className={styles.course__date}>15 Febrero 2022</span>
                         <span className={styles.starts}>
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />
-                          <BsStar fill="#ff8906" />
-                          <BsStar fill="#ff8906" />
+                          <BsStarFill fill="#ff8906" />
+                          <BsStarFill fill="#ff8906" />
                         </span>
                       </div>
                     </div>
@@ -163,7 +165,7 @@ const Courses = () => {
                       <div className={styles.course__preview}>
                         <img
                           className={styles.course__image}
-                          src="https://picsum.photos/278/156"
+                          src="https://picsum.photos/279/157"
                           alt="course gym"
                         />
                         <div className={styles.course__play}>
@@ -172,18 +174,18 @@ const Courses = () => {
                       </div>
                       <div className={styles.course__description}>
                         <span className={styles.course__title}>
-                          Pectorales de Acero con pesas
+                          Eget tincidunt nibh pulvinar a
                         </span>
-                        <span className={styles.course__instructor}>
+                        {/* <span className={styles.course__instructor}>
                           Juan Quino Areche Isra
-                        </span>
-                        <span className={styles.course__date}>20 Diciembre 2021</span>
+                        </span> */}
+                        <span className={styles.course__date}>12 Marzo 2022</span>
                         <span className={styles.starts}>
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />
-                          <BsStar fill="#ff8906" />
-                          <BsStar fill="#ff8906" />
+                          <BsStarFill fill="#ff8906" />
+                          <BsStarFill fill="#ff8906" />
                         </span>
                       </div>
                     </div>
@@ -191,7 +193,7 @@ const Courses = () => {
                       <div className={styles.course__preview}>
                         <img
                           className={styles.course__image}
-                          src="https://picsum.photos/278/156"
+                          src="https://picsum.photos/280/158"
                           alt="course gym"
                         />
                         <div className={styles.course__play}>
@@ -200,17 +202,17 @@ const Courses = () => {
                       </div>
                       <div className={styles.course__description}>
                         <span className={styles.course__title}>
-                          Pectorales de Acero con pesas
+                          Lacinia eget consectetur sed
                         </span>
-                        <span className={styles.course__instructor}>
+                        {/* <span className={styles.course__instructor}>
                           Juan Quino Areche Isra
-                        </span>
-                        <span className={styles.course__date}>20 Diciembre 2021</span>
+                        </span> */}
+                        <span className={styles.course__date}>20 Marzo 2022</span>
                         <span className={styles.starts}>
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />
-                          <BsStar fill="#ff8906" />
+                          <BsStarFill fill="#ff8906" />
                           <BsStar fill="#ff8906" />
                         </span>
                       </div>
@@ -219,7 +221,7 @@ const Courses = () => {
                       <div className={styles.course__preview}>
                         <img
                           className={styles.course__image}
-                          src="https://picsum.photos/278/156"
+                          src="https://picsum.photos/276/154"
                           alt="course gym"
                         />
                         <div className={styles.course__play}>
@@ -228,12 +230,12 @@ const Courses = () => {
                       </div>
                       <div className={styles.course__description}>
                         <span className={styles.course__title}>
-                          Pectorales de Acero con pesas
+                          Vivamus magna justo, lacinia eget
                         </span>
-                        <span className={styles.course__instructor}>
+                        {/* <span className={styles.course__instructor}>
                           Juan Quino Areche Isra
-                        </span>
-                        <span className={styles.course__date}>20 Diciembre 2021</span>
+                        </span> */}
+                        <span className={styles.course__date}>01 Abril 2022</span>
                         <span className={styles.starts}>
                           <BsStarFill fill="#ff8906" />
                           <BsStarFill fill="#ff8906" />

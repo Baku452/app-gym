@@ -37,6 +37,15 @@
     border-radius: 5px 5px 0 0;
   }
 
+  &__control {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+
   &__play {
     position: absolute;
     left: 0;
@@ -63,6 +72,9 @@
   color: $black;
   font-size:14px;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .comments {
@@ -72,9 +84,18 @@
   height: 50px;
   margin: 6px 0;
   justify-content: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 70px;
+  text-overflow: ellipsis;
 }
 
 .starts {
   display: flex;
 }
 
+.cursorPointer {
+  cursor: pointer;
+}
