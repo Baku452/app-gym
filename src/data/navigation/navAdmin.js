@@ -17,6 +17,7 @@ const asideInstructor = [
   { id: 1, title: 'Dashboard', link: '/dashboard', icon: navHome },
   { id: 2, title: 'My Courses', link: '/dashboard/courses', icon: navClass },
   { id: 3, title: 'My Posts', link: '/dashboard/blogs', icon: navHome },
+  { id: 4, title: 'Students', link: '/dashboard/students', icon: navStudents },
   // { id: 4, title: 'Account', link: '/dashboard', icon: navConfig },
 ];
 

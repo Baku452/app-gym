@@ -9,7 +9,7 @@ const CardStudent = () => {
       <div className={styles.student__content}>
         <img
           className={styles.student__image}
-          src="https://picsum.photos/278/156"
+          src="https://100k-faces.glitch.me/random-image"
           alt="student gym"
         />
         <div className={styles.student__name}>
